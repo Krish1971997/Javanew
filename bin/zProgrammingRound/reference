@@ -1,0 +1,39 @@
+
+boolean first=true;
+//				if(current>10 && i>2 && first) {
+//					System.out.print(" ");
+//					first=false;
+//				}
+
+
+else if(target < arr[i]&& first){
+				high = arr[i];
+				first=false;
+			}
+			
+			
+			//		while (true) {
+//			boolean isDuplicateAvailable = false;
+//			for (int i = 1; i < str.length(); i++) {
+//				if (str.charAt(i - 1) == str.charAt(i)) {
+//					isDuplicateAvailable = true;
+//					str.replace(i - 1, i + 1, "");
+//				}
+//			}
+//			if (!isDuplicateAvailable) {
+//				System.out.println(str.toString());
+//				break;
+//			}
+//		}
+
+boolean isDuplicateAvailable = false;
+		for (int i = 1; i < str.length(); i++) {
+			if (str.charAt(i - 1) == str.charAt(i)) {
+				str.replace(i - 1, i + 1, "");
+				isDuplicateAvailable=true;
+			}
+			if(isDuplicateAvailable && str.length()-1==i)
+				i=0;
+		}
+		
+		System.out.println(str.toString());
