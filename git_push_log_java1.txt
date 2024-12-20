@@ -1,2 +1,10 @@
 Task started at 21/12/2024  1:19:08.12 
 Reinitialized existing Git repository in C:/Users/Admin/Documents/Eclipse/Java1/.git/
+warning: in the working copy of 'git_push_log_java1.txt', LF will be replaced by CRLF the next time Git touches it
+[master f1260e8] first commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: remote origin already exists.
+Remote origin already exists. 
+To https://github.com/Krish1971997/Javanew.git
+   0a4e4a5..f1260e8  master -> master
+Task completed at 21/12/2024  1:19:10.77 
