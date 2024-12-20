@@ -5,7 +5,6 @@ public class CaesarAndCipher {
 		String s = "AYZayz";
 		int num = 3;
 		StringBuilder sb = new StringBuilder();
-		//		System.out.println(sb.toString());
 
 	/*	for (int i = 0; i < s.length(); i++) {
 			int temp = (int) s.charAt(i);
