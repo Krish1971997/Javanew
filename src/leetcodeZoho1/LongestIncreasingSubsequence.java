@@ -14,7 +14,6 @@ public class LongestIncreasingSubsequence {
 	}
 
 	static void find(int[] nums, int index, ArrayList<Integer> list,int currmax) {
-		
 		if(maxsum<currmax) {
 			maxsum=currmax;
 		}
