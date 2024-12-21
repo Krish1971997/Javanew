@@ -4,12 +4,11 @@ package leetcodeZoho1;
 public class RotateMatrix2D {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[][] arr = { { 1, 2, 3, 10 }, 
 						{ 4, 5, 6 ,11}, 
 						{ 7, 8, 9 ,12} };
 		int count = 0;
-		// Tranpose
+
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
 				System.out.println(" Count : " + count);
