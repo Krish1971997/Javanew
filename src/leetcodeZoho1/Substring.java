@@ -7,9 +7,9 @@ public class Substring {
 		find(s,0);
 	}
 	static void find(String s, int index) {
-		if(index==s.length()) {
+		if(index==s.length()) 
 			return;
-		}
+		
 		
 		for (int i = index; i < s.length(); i++) {
 			String sub=s.substring(index, i+1);
