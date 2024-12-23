@@ -9,7 +9,6 @@ import org.apache.commons.codec.binary.Hex;
 
 public class AESDecryption {
 
-    // Method to derive the password-based AES key
     public static SecretKey getPasswordFromKey(String key, String salt) throws Exception {
         SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
         KeySpec spec = new PBEKeySpec(key.toCharArray(), salt.getBytes(), 1000, 256);
@@ -17,7 +16,6 @@ public class AESDecryption {
         return secret;
     }
 
-    // Method to encrypt the message
     public static String encrypt(String plainText, String password) throws Exception {
         // Generate a random initialization vector (IV)
         SecureRandom secureRandom = new SecureRandom();
