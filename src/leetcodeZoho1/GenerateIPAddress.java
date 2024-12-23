@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GenerateIPAddress {
 	public static void main(String[] args) {
-		String s = "1921680150";
+		String s = "53445";
 		List<String> result = restoreIpAddresses(s);
 		for (String ip : result) {
 			System.out.println(ip);
