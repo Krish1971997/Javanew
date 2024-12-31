@@ -11,11 +11,9 @@ public class LongestValidParenthesesStack {
 			if (s.charAt(i) == '(') {
 				stack.push(s.charAt(i));
 			}else {
-				if(s.charAt(i) == ')') {
-					if(i>0 && s.charAt(i-1)== '(') {
+				if(s.charAt(i) == ')' &&!stack.isEmpty() && stack.peek()=='(') {
 						count=count+2;
 						stack.pop();
-					}
 				}
 			}		
 		}
@@ -45,7 +43,7 @@ public class LongestValidParenthesesStack {
 //	}
 
 	public static void main(String[] args) {
-		String s = ")()())";
+		String s = ")(()())(";
 		System.out.println("Longest valid parentheses length: " + longestValidParentheses(s));
 	}
 }

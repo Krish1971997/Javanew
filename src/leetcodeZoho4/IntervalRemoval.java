@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class IntervalRemoval {
 
 	public static void main(String[] args) {
-		int[][] intervals = { { 1, 2 }, { 6, 11 }, { 1, 3 }, { 2, 4 } };
+		int[][] intervals = { { 1, 2 }, { 2,3 }, { 3, 4 }, { 1, 3 } };
 
 		int result = minIntervalsToRemove(intervals);
 		System.out.println("Minimum number of intervals to remove: " + result);
@@ -25,6 +25,7 @@ public class IntervalRemoval {
 				return o1[1]-o2[1];
 			}
 		});
+		
 
 		int count = 0;
 		int end = intervals[0][1];

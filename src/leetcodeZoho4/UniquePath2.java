@@ -20,9 +20,6 @@ public class UniquePath2 {
 
 		if (i >= arr.length || j >= arr[0].length)
 			return 0;
-		if (arr[i][j] == -1) {
-
-		}
 
 		if (arr[i][j] == 0)
 			return 0;

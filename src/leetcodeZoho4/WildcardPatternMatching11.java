@@ -4,8 +4,8 @@ package leetcodeZoho4;
 public class WildcardPatternMatching11 {
 
 	public static void main(String[] args) {
-		String s1 = "aaacde";
-		String s2 = "a..cde";
+		String s1 = "abcdefg";
+		String s2 = "*a*b*c*d*.";
 		System.out.println(find(s1, s2, 0, 0));
 	}
 
@@ -16,17 +16,14 @@ public class WildcardPatternMatching11 {
 		if (j == s2.length())
 			return false;
 
-		boolean match = false;
-		if (j < s2.length() - 1 && (s2.charAt(j + 1) == '*')) {
+		if (s2.charAt(j) == '*') {
+			return find(s1, s2, i, j + 1) || 
+					(i < s1.length() && find(s1, s2, i + 1, j));
+		}
 
-			match = find(s1, s2, i, j + 2);
-			if ((i < s1.length() && s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '.')) {
-				match = match || find(s1, s2, i + 1, j);
-			}
-			return match;
-		} else if ((i < s1.length() && s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '.'))
+		if ((i < s1.length() && s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '.'))
 			return find(s1, s2, i + 1, j + 1);
-		return match;
+		return false;
 	}
 
 }

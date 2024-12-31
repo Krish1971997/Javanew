@@ -7,19 +7,17 @@ public class Ticket {
 	private String source;
 	private String destination;
 	private int noOfTickets;
-	private boolean isConfirmed;
-	private boolean isWaitinglist;
+	private TrainBookingStatus bookstatus;
 	private List<Integer> seatNums;
 
-	public Ticket(int pnr, String source, String destination, int noOfTickets, boolean isConfirmed,
-			boolean isWaitinglist, List<Integer> seatNums) {
+	public Ticket(int pnr, String source, String destination, int noOfTickets, TrainBookingStatus bookstatus,
+			List<Integer> seatNums) {
 		super();
 		this.pnr = pnr;
 		this.source = source;
 		this.destination = destination;
 		this.noOfTickets = noOfTickets;
-		this.isConfirmed = isConfirmed;
-		this.isWaitinglist = isWaitinglist;
+		this.bookstatus = bookstatus;
 		this.seatNums = seatNums;
 	}
 
@@ -43,16 +41,12 @@ public class Ticket {
 		this.noOfTickets = noOfTickets;
 	}
 
-	public boolean isConfirmed() {
-		return isConfirmed;
+	public TrainBookingStatus getBookstatus() {
+		return bookstatus;
 	}
 
-	public void setConfirmed(boolean isConfirmed) {
-		this.isConfirmed = isConfirmed;
-	}
-
-	public void setWaitinglist(boolean isWaitinglist) {
-		this.isWaitinglist = isWaitinglist;
+	public void setBookstatus(TrainBookingStatus bookstatus) {
+		this.bookstatus = bookstatus;
 	}
 
 	public List<Integer> getSeatNums() {
@@ -65,8 +59,8 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		return "Ticket [pnr=" + pnr + ", source=" + source + ", destination=" + destination + ",noOfTickets="
-				+ noOfTickets + ", isConfirmed=" + isConfirmed + ", isWaitinglist=" + isWaitinglist + ",seatNums="
-				+ seatNums + "]";
+		return "Ticket [pnr=" + pnr + ", source=" + source + ", destination=" + destination + ", noOfTickets="
+				+ noOfTickets + ", bookstatus=" + bookstatus + ", seatNums=" + seatNums + "]";
 	}
+
 }

@@ -1,10 +1,17 @@
 package leetcodeZoho5_dp;
 
-public class ContainerWithMostWater {
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+public class ContainerWithMostWater {
+	
+	private static final Logger LOGGER = Logger.getLogger(ContainerWithMostWater.class.getName());
+	
 	public static void main(String[] args) {
 		int[] height = { 1, 8, 6, 2, 5, 4, 8, 6, 3 };
+		LOGGER.log(Level.INFO, "Program Started");
 		System.out.println(maxArea(height));
+		LOGGER.log(Level.INFO, "Program Finished");
 	}
 
 	public static int maxArea(int[] height) {
@@ -21,7 +28,9 @@ public class ContainerWithMostWater {
 			} else
 				right--;
 		}
-
+		
+		LOGGER.log(Level.INFO, "Return statement");
+		
 		return maxArea;
 	}
 }

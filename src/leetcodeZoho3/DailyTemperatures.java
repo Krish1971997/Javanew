@@ -3,14 +3,14 @@ package leetcodeZoho3;
 import java.util.Stack;
 
 public class DailyTemperatures {
-	public int[] dailyTemperatures(int[] T) {
-		int n = T.length;
+	public int[] dailyTemperatures(int[] arr) {
+		int n = arr.length;
 		int[] answer = new int[n];
 		Stack<Integer> stack = new Stack<>();
 
 		for (int i = 0; i < n; i++) {
 			// Compare the current temperature with the top of the stack
-			while (!stack.isEmpty() && T[i] > T[stack.peek()]) {
+			while (!stack.isEmpty() && arr[i] > arr[stack.peek()]) {
 				int prevIndex = stack.pop();
 				answer[prevIndex] = i - prevIndex; 
 			}

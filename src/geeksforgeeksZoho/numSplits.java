@@ -23,8 +23,8 @@ class numSplits {
 		System.out.println(Arrays.toString(prefix));
 		System.out.println(Arrays.toString(suffix));
 
-		for (int i = 1; i< n; ++i)
-			if (prefix[i-1] == suffix[i])
+		for (int i = 1; i < n; ++i)
+			if (prefix[i - 1] == suffix[i])
 				++ans;
 		return ans;
 	}

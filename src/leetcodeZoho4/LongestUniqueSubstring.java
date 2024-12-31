@@ -27,12 +27,11 @@ public class LongestUniqueSubstring {
 			}
 		}
 
-		// Return the substring from startOfLongest with maxLength characters
 		return s.substring(startOfLongest, startOfLongest + maxLength);
 	}
 
 	public static void main(String[] args) {
-		String s = "abcabcbb";
+		String s = "abeabcdbb";
 		System.out.println("Longest substring with unique characters: " + longestUniqueSubstring(s));
 	}
 }

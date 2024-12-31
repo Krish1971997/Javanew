@@ -3,7 +3,7 @@ package leetcodeZoho1;
 public class Substring {
 
 	public static void main(String[] args) {
-		String s="aba";
+		String s="abc";
 		find(s,0);
 	}
 	static void find(String s, int index) {

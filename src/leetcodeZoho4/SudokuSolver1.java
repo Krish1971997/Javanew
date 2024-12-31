@@ -2,15 +2,17 @@ package leetcodeZoho4;
 
 public class SudokuSolver1 {
 
+	private static final int SIZE = 9;
+	
 	public void solveSudoku(int[][] board) {
 		solve(board);
 	}
 
 	private boolean solve(int[][] board) {
-		for (int row = 0; row < 9; row++) {
-			for (int col = 0; col < 9; col++) {
+		for (int row = 0; row < SIZE; row++) {
+			for (int col = 0; col < SIZE; col++) {
 				if (board[row][col] == 0) {
-					for (int num = 1; num <= 9; num++) {
+					for (int num = 1; num <= SIZE; num++) {
 						if (isValid(board, row, col, num)) {
 							board[row][col] = num; // Place the number
 							if (solve(board)) { // Recursively solve the rest
@@ -27,7 +29,7 @@ public class SudokuSolver1 {
 	}
 
 	private boolean isValid(int[][] board, int row, int col, int num) {
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < SIZE; i++) {
 			if (board[row][i] == num)
 				return false; // Check row
 			if (board[i][col] == num)

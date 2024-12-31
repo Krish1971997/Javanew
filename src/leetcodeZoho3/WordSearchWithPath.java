@@ -41,10 +41,10 @@ public class WordSearchWithPath {
 		path.add(new int[] { row, col });
 
 		// Explore all four directions
-		boolean found = dfs(board, word, row + 1, col, index + 1, path)
-				|| dfs(board, word, row - 1, col, index + 1, path) 
+		boolean found =dfs(board, word, row, col - 1, index + 1, path) 
+				|| dfs(board, word, row - 1, col, index + 1, path)
 				|| dfs(board, word, row, col + 1, index + 1, path)
-				|| dfs(board, word, row, col - 1, index + 1, path);
+				||dfs(board, word, row + 1, col, index + 1, path);
 
 		if (!found) {
 			// If not found, backtrack
@@ -59,8 +59,10 @@ public class WordSearchWithPath {
 
 	public static void main(String[] args) {
 		WordSearchWithPath ws = new WordSearchWithPath();
-		char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
-		String word1 = "ABCCED";
+		//char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
+		char[][] board = { { 'A', 'Z', 'T', 'E','C' }, { 'O', 'Z', 'O', 'N','E' }, 
+				{ 'H', 'O', 'M', 'E', 'S' },{ 'S', 'O', 'L', 'I', 'D' } };
+		String word1 = "ZOHO";
 		String word2 = "SEE";
 		String word3 = "ABCB";
 
@@ -68,15 +70,15 @@ public class WordSearchWithPath {
 		List<int[]> path2 = ws.findWordPath(board, word2);
 		List<int[]> path3 = ws.findWordPath(board, word3);
 
-		System.out.println("Path for word 'ABCCED': " + formatPath(path1));
-		System.out.println("Path for word 'SEE': " + formatPath(path2));
-		System.out.println("Path for word 'ABCB': " + (path3.size()>0?formatPath(path3):"No Match found"));
+		System.out.println("Path for word "+word1+": " + (path1.size()>0?formatPath(path1):"No Match found"));
+		System.out.println("Path for word "+word2+": " + (path2.size()>0?formatPath(path2):"No Match found"));
+		System.out.println("Path for word "+word3+": " + (path3.size()>0?formatPath(path3):"No Match found"));
 	}
 
 	private static String formatPath(List<int[]> path) {
 		StringBuilder sb = new StringBuilder();
 		for (int[] cell : path) {
-			sb.append("(").append(cell[0]).append(",").append(cell[1]).append(")");
+			sb.append("(").append(cell[0]+1).append(",").append(cell[1]+1).append(")");
 			if (path.indexOf(cell) != path.size() - 1) {
 				sb.append(",");
 			}
