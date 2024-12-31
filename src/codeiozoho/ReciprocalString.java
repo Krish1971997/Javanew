@@ -32,8 +32,6 @@ public class ReciprocalString {
                 sb.append(c); // For non-alphabetic and non-numeric characters
             }
         }
-
-		
 		
 		System.out.println(sb.toString());
 	}
