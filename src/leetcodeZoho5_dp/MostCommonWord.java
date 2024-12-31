@@ -3,7 +3,7 @@ package leetcodeZoho5_dp;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MostCommonWord1 {
+public class MostCommonWord {
 	public static void main(String[] args) {
 		String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit";
 		String[] banned = { "hit" };

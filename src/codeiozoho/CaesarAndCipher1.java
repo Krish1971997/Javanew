@@ -1,6 +1,6 @@
 package codeiozoho;
 
-public class CaesarAndCipher {
+public class CaesarAndCipher1 {
 	public static void main(String[] args) {
 		String s = "AYZayz";
 		int num = 3;
