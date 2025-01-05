@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class Serialization {
+public class Serialization{
 
 	public static void main(String args[]) {
 		File file=new File("C:\\Users\\Admin\\Documents\\Zoho\\New Text Document.txt");

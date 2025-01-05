@@ -1,4 +1,4 @@
-package test;
+package leetcodeZoho5_dp;
 
 import java.util.HashMap;
 import java.util.Map;
