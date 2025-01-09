@@ -3,7 +3,7 @@ package geeksforgeeksZoho_1;
 public class DecodeWays {
 
 	public static void main(String[] args) {
-		System.out.println(numDecodings("12")); // Output: 2
+		System.out.println(numDecodings("123")); // Output: 2
 		System.out.println(numDecodings("226")); // Output: 3
 		System.out.println(numDecodings("06")); // Output: 0
 	}

@@ -68,26 +68,20 @@ public class FindMinimumNumberOfSteps {
 			return;
 		}
 
-		// Check boundaries (stay within array limits)
 		if (arow < 0 || arow >= arr.length || acol < 0 || acol >= arr[0].length) {
 			return;
 		}
 
-		// If current steps exceed the minimum already found, no need to explore further
 		if (steps >= stepsCount) {
 			return;
 		}
 
-		// Generate a key for memoization
 		String key = arow + "," + acol;
 
-		// Memoization: If we've visited this cell with fewer or equal steps, stop
-		// exploring
 		if (memo.containsKey(key) && memo.get(key) <= steps) {
 			return;
 		}
 
-		// Save the current state in the memoization map
 		memo.put(key, steps);
 
 		// Explore all possible directions (Up, Down, Left, Right)

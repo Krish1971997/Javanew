@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Edit_Distance {
 	public static void main(String[] args) {
-		String S1 = "abd";
-		String S2 = "acb";
+		String S1 = "horse";
+		String S2 = "ros";
 		int m = S1.length();
 		int n = S2.length();
 		int mem[][] = new int[m][n];

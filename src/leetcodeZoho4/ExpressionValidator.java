@@ -23,21 +23,17 @@ public class ExpressionValidator {
 				stack.pop();
 			}
 
-			// Check for valid operator and operand placement
 			if (isOperator(currentChar)) {
 				// Operators shouldn't be the first character or placed after another operator
 				// or opening parentheses
-				if (i == 0 || isOperator(prevChar) || prevChar == '(') {
+				if (i == 0 || isOperator(prevChar) || prevChar == '(') 
 					return false;
-				}
 			}
 
-			// Operators can't be at the end of the expression
 			if (isOperator(currentChar) && i == expression.length() - 1) {
 				return false;
 			}
 
-			// Update previous character
 			prevChar = currentChar;
 		}
 
