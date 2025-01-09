@@ -19,7 +19,6 @@ public class DailyTemperatures {
 
 		return answer;
 	}
-
 	public static void main(String[] args) {
 		DailyTemperatures solution = new DailyTemperatures();
 		int[] temperatures = { 73, 74, 75, 71, 69, 72, 76, 73 };
