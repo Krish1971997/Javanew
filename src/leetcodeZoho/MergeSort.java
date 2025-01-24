@@ -15,12 +15,10 @@ public class MergeSort {
 			return;
 		}
 
-		// Find the middle position and create left and right partitions
 		int mid = numberOfElements / 2;
 		int[] leftArr = new int[mid];
 		int[] rightArr = new int[numberOfElements - mid];
 
-		// Fill up the partitions
 		for (int i = 0; i < mid; i++) {
 			leftArr[i] = arr[i];
 		}

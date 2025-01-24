@@ -7,8 +7,7 @@ public class FindExcelColumnNameFromGivenNumber {
 		StringBuilder sb=new StringBuilder();
 		while(n>0) {
 			n--;
-			int rem=(n%26);
-			char ch=(char) (rem+'A');
+			char ch=(char) (n%26+'A');
 			sb.insert(0, ch);
 			n=n/26;
 		}

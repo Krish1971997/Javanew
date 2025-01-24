@@ -1,11 +1,12 @@
 package leetcodeZoho4;
 
-//From rajesh bro
+//From rajesh bro 
+//WORKING
 public class WildcardPatternMatching11 {
 
 	public static void main(String[] args) {
-		String s1 = "abcdefg";
-		String s2 = "*a*b*c*d*.";
+		String s1 = "XYXZZXY";
+		String s2 = "X***X";
 		System.out.println(find(s1, s2, 0, 0));
 	}
 
@@ -21,7 +22,7 @@ public class WildcardPatternMatching11 {
 					(i < s1.length() && find(s1, s2, i + 1, j));
 		}
 
-		if ((i < s1.length() && s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '.'))
+		if ((i < s1.length() && s1.charAt(i) == s2.charAt(j) || s2.charAt(j) == '?'))
 			return find(s1, s2, i + 1, j + 1);
 		return false;
 	}

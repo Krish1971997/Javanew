@@ -15,7 +15,7 @@ public class CountAndSay {
 			else {
 				String s = "";
 				int j = 0;
-				while (j < str.length()) {
+				while (str.length()>j) {
 					int count = 1;
 					while ((j < str.length() - 1) && str.charAt(j) == str.charAt(j + 1)) {
 						count = count + 1;

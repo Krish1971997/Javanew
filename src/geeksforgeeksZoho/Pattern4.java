@@ -20,7 +20,7 @@ public class Pattern4 {
 				num++;
 			}
 			// Print decreasing numbers
-			num -= 2;
+			num = num- 2;
 			for (int l = 1; l <= i - 1; l++) {
 				System.out.print(num + " ");
 				num--;

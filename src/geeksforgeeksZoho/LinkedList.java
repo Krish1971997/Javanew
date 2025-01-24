@@ -69,8 +69,8 @@ public class LinkedList {
 	            prev = current;
 	            current = nextTemp;
 	        }
-	        head=prev;
-	        return head; // New head of the reversed list
+	        return head=prev;
+	        //return head; // New head of the reversed list
 	    }
 
 	// Retrieve all elements of the linked list

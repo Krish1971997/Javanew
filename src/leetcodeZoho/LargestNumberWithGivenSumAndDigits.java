@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class LargestNumberWithGivenSumAndDigits {
 	public static void main(String[] args) {
-		int s1 = 3;
-		int d1 = 3;
+		int s1 = 9;
+		int d1 = 2;
 		System.out.println("Output for s = 9, d = 2: " + largestNumber(s1, d1));
 
 		int s2 = 20;

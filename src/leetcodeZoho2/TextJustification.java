@@ -47,6 +47,7 @@ public class TextJustification {
 				}
 				result.add(buildLine(cur));
 				//result.add(join("", cur));
+				//String.join("", words);
 				
 				cur.clear();
 				numOfLetters = 0;

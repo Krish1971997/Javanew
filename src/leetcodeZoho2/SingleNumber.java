@@ -7,20 +7,24 @@ public class SingleNumber {
 		System.out.println(find(arr));
 	}
 	static int find(int arr[]) {
-		int l=0;
-		int h=arr.length-1;
-		while(l<h) {
-			int mid=(l+h)/2;
-			if(mid%2==1)
-				mid--;
-			
-			if(arr[mid]==arr[mid+1]) {
-				l=mid+2;
-			}else
-				h=mid;
+//		int l=0;
+//		int h=arr.length-1;
+//		while(l<h) {
+//			int mid=(l+h)/2;
+//			if(mid%2==1)
+//				mid--;
+//			
+//			if(arr[mid]==arr[mid+1]) {
+//				l=mid+2;
+//			}else
+//				h=mid;
+//		}
+		int singleNumber=0;
+		for (int i = 0; i < arr.length; i++) {
+			singleNumber=singleNumber^arr[i];
 		}
 		
-		return arr[l];
+		return singleNumber;
 	}
 
 }

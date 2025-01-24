@@ -20,16 +20,16 @@ public class Z_MergeIntervals {
 
 	private static int[][] mergeIntervals(int[][] arr) {
 		List<int[]> merged = new ArrayList<>();
-		// Comparator.comparingInt(a -> a[0])
+		Arrays.sort(arr,Comparator.comparingInt(ar -> ar[0]));
 		//Arrays.sort(arr,(o1,o2)->o1[0] - o2[0]);
-		Arrays.sort(arr,new Comparator<int[]>() {
-
-			@Override
-			public int compare(int[] o1, int[] o2) {
-				return o1[0]-o2[0];
-			}
-			
-		});
+//		Arrays.sort(arr,new Comparator<int[]>() {
+//
+//			@Override
+//			public int compare(int[] o1, int[] o2) {
+//				return o1[0]-o2[0];
+//			}
+//			
+//		});
 		
 	/*	for (int[] is : arr) {
 			if (is[0] < current[1]) {

@@ -41,14 +41,14 @@ public class Z13_RemoveFragment {
 		StringBuilder sb = new StringBuilder();
 		int i = 0;
 		while (i < str.length) {
-			if (i <= str.length - 3 && (str[i] + " " + str[i + 1] + " " + str[i + 2]).equals(fragment)) {
+			if (i < str.length - 2 && (str[i] + " " + str[i + 1] + " " + str[i + 2]).equals(fragment)) {
 				i = i + 2;
 			} else {
 				if (sb.length() > 0)
 					sb.append(" ");
 				sb.append(str[i]);
 			}
-			i++;
+			i=i+1;
 		}
 		return sb.toString();
 	}
