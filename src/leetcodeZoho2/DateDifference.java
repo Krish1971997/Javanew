@@ -26,7 +26,7 @@ public class DateDifference {
 
 		for (int i = 0; i < month - 1; i++) {
 			totalDays += months[i];
-			if (i == 1 && isLeapYear(year)) {
+			if (i == 1 && isLeapYear(year)) { // feb month
 				totalDays++;
 			}
 		}

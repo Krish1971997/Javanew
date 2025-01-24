@@ -21,8 +21,8 @@ class DungeonPath {
 
 	// BFS method to find the shortest path
 	static int findShortestPath(int[][] dungeon, int startRow, int startCol, int goalRow, int goalCol) {
-		int rows = dungeon.length;
-		int cols = dungeon[0].length;
+		int maxRows = dungeon.length;
+		int maxCols = dungeon[0].length;
 
 		// Directions array for moving up, down, left, and right
 		int[] rowDir = { -1, 1, 0, 0 };
@@ -30,7 +30,7 @@ class DungeonPath {
 
 		// Queue for BFS, starting from the adventurer's position
 		Queue<Position> queue = new LinkedList<>();
-		boolean[][] visited = new boolean[rows][cols];
+		boolean[][] visited = new boolean[maxRows][maxCols];
 
 		// Add the starting position to the queue
 		queue.add(new Position(startRow, startCol, 0));
@@ -49,7 +49,7 @@ class DungeonPath {
 				int newRow = current.row + rowDir[i];
 				int newCol = current.col + colDir[i];
 
-				if (isValid(newRow, newCol, rows, cols, visited)) {
+				if (isValid(newRow, newCol, maxRows, maxCols, visited)) {
 					visited[newRow][newCol] = true;
 					queue.add(new Position(newRow, newCol, current.steps + 1));
 				}

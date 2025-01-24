@@ -6,13 +6,13 @@ public class PatternPrint {
         int[][] pattern = new int[n][n];
         int layers = n / 2;
 
-        for (int layer = 0; layer < layers; layer++) {
-            int value = n - layer;
-            for (int i = layer; i < n - layer; i++) {
-                pattern[layer][i] = value;          //top
-                pattern[n - layer - 1][i] = value;  //down
-                pattern[i][layer] = value; 		    //left
-                pattern[i][n - layer - 1] = value;  //right
+        for (int row = 0; row < layers; row++) {
+            int value = n - row;
+            for (int i = row; i < n - row; i++) {
+                pattern[row][i] = value;          //top
+                pattern[n - row - 1][i] = value;  //down
+                pattern[i][row] = value; 		    //left
+                pattern[i][n - row - 1] = value;  //right
             }
         }
 

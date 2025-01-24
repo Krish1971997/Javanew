@@ -8,7 +8,10 @@ import java.util.Date;
 public class LocalDateCheck {
 	public static void main(String[] args) {
 		LocalDate currentDate = LocalDate.now();
+		String date1="2025-01-24";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date =LocalDate.parse(date1, formatter);
+        System.out.println("Local date -> "+date);
         String currentDateString = currentDate.format(formatter);
 
         // Parse the formatted string back into a Date object

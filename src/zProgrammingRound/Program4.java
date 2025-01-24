@@ -13,7 +13,6 @@ public class Program4 {
 		int i = 1;
 		while (i < str.length()) {
 			if (str.charAt(i - 1) == str.charAt(i)) {
-				// Remove adjacent duplicates
 				str.delete(i - 1, i + 1);
 				// Step back to check for new adjacent duplicates created
 				if (i > 1)

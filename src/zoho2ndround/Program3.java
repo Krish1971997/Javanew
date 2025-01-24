@@ -49,16 +49,18 @@ public class Program3 {
 	}
 
 	public static boolean isDigit(char ch) {
-		int num = ch - '0';
-		if (num >= 0 && num <= 9)
-			return true;
-		return false;
+//		int num = ch - '0';
+//		if (num >= 0 && num <= 9)
+//			return true;
+//		return false;
+		return ch >= '0' && ch <= '9';
 	}
 
 	public static int getNumericValue(char ch) {
-		int num = ch - '0';
-		if (num >= 0 && num <= 9)
-			return num;
-		return 0;
+//		int num = ch - '0';
+//		if (num >= 0 && num <= 9)
+//			return num;
+//		return 0;
+		return ch - '0';
 	}
 }

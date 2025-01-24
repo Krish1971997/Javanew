@@ -7,7 +7,7 @@ public class Program3 {
 	
 	public static void main(String[] args) {
 		int[] arr= {8,12,8,15,12};
-		System.out.println(findUnMatchedEarBud(arr));
+		System.out.println(findUnMatchedEarBud1(arr));
 	}
 
 	private static int findUnMatchedEarBud(int[] arr) {
@@ -21,6 +21,14 @@ public class Program3 {
 				return entry.getKey();
 		}	
 		return 0;
+	}
+	
+	private static int findUnMatchedEarBud1(int[] arr) {
+		int number=0;
+		for (int i = 0; i < arr.length; i++) {
+			number=number^arr[i];
+		}
+		return number;
 	}
 	
 //	private static int findUnMatchedEarBud(int[] arr) {

@@ -6,7 +6,7 @@ public class ExpressionValidator {
 
 	public static boolean isValidExpression(String expression) {
 		Stack<Character> stack = new Stack<>();
-		char prevChar = '\0'; // Track the previous character
+		char prevChar = '\u0000'; // Track the previous character
 
 		for (int i = 0; i < expression.length(); i++) {
 			char currentChar = expression.charAt(i);

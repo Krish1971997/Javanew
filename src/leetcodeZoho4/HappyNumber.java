@@ -31,7 +31,7 @@ public class HappyNumber {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter a number: ");
-		int number = scanner.nextInt();
+		int number = 19;
 //input 19 or 4
 		if (isHappyNumber(number)) {
 			System.out.println(number + " is a happy number.");

@@ -28,7 +28,7 @@ public class Anagram {
 			}
 		}
 		for (int i = 0; i < value.length; i++) {
-			if (value[i] != '\0' && !compareArrays(key[i], value[i], s2))
+			if (key[i] != '\0' && !compareArrays(key[i], value[i], s2))
 				return false;
 		}
 		return true;
@@ -54,4 +54,40 @@ public class Anagram {
 		}
 		return -1;
 	}
+	
+	//Alternate solution
+	
+	
+//	public static void main(String[] args) {
+//        String s1 = "listenl98";
+//        String s2 = "89lsilent";
+//        
+//        if (isAnagram(s1, s2)) {
+//            System.out.println("Yes");
+//        } else {
+//            System.out.println("No");
+//        }
+//    }
+//
+//    private static boolean isAnagram(String s1, String s2) {
+//        if (s1.length() != s2.length()) {
+//            return false;
+//        }
+//
+//        int[] freq1 = new int[256]; // Assuming ASCII characters (256 possible characters)
+//        int[] freq2 = new int[256];
+//
+//        for (int i = 0; i < s1.length(); i++) {
+//            freq1[s1.charAt(i)]++;
+//            freq2[s2.charAt(i)]++;
+//        }
+//
+//        for (int i = 0; i < 256; i++) {
+//            if (freq1[i] != freq2[i]) {
+//                return false; // If any character count differs, return false
+//            }
+//        }
+//
+//        return true;
+//    }
 }

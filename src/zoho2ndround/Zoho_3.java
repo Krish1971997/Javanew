@@ -40,5 +40,7 @@ public class Zoho_3 {
 			ans = (double) arr[arr.length / 2];
 		}
 		System.out.println("Ans : " + String.format("%.5f", ans));
+		System.out.println();
+		System.out.printf("printf Ans : %.5f", ans); //same results for two print
 	}
 }
