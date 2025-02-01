@@ -1,6 +1,13 @@
 package TrainTicketBookingApp;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeSet;
 
 class InvalidDestinationException extends Exception {
 	public InvalidDestinationException() {
@@ -182,7 +189,8 @@ public class Train {
 					String from = "TicketBooking";
 					updateTicketAvailability(source, destination, noOfTickets, from);
 					currentWaitingList -= noOfTickets;
-					isTrainWaitingListAvailable = false;
+					if(pnrQueue.size()==1)
+						isTrainWaitingListAvailable = false;
 
 					List<Integer> seats = seatsAssign(noOfTickets, currentAvailable);
 					ticket.setSeatNums(seats);
