@@ -10,7 +10,7 @@ public class WordSearchArray {
         };
         String word = "DECF";
         WordSearchArray w = new WordSearchArray();
-        System.out.println(w.exist(board, word) ? "True" : "False");
+        System.out.println(w.exist(board, word));
     }
 
     public boolean exist(char[][] board, String word) {

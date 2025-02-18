@@ -10,7 +10,6 @@ public class Substring {
 		if(index==s.length()) 
 			return;
 		
-		
 		for (int i = index; i < s.length(); i++) {
 			String sub=s.substring(index, i+1);
 			System.out.println(sub);

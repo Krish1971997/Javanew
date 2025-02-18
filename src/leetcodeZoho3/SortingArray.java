@@ -7,6 +7,8 @@ import java.util.Arrays;
 I/p 5 8 11 6 2 1 7
 O/p 1 5 7 11 8 6 2
  * */
+
+//not working
 public class SortingArray {
 
 	public static void main(String[] args) {

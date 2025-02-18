@@ -17,10 +17,11 @@ public class NumberWeights {
 		}
 
 		// Sort the numbers based on their weights in increasing order
-		 //Collections.sort(numberWeights,
-		 //Comparator.comparingInt(NumberWeight::getWeight));
+		// Collections.sort(numberWeights,
+		// Comparator.comparingInt(NumberWeight::getWeight));
 		numberWeights.sort((n1, n2) -> Integer.compare(n1.getWeight(), n2.getWeight()));
-		//Collections.sort(numberWeights, Comparator.comparingInt(NumberWeight::getWeight));
+		// Collections.sort(numberWeights,
+		// Comparator.comparingInt(NumberWeight::getWeight));
 
 		// Print the numbers and their weights
 		for (NumberWeight nw : numberWeights) {
@@ -44,10 +45,10 @@ public class NumberWeights {
 		return weight;
 	}
 
-		private static boolean isPerfectSquare(int number) {
-			int sqrt = (int) Math.sqrt(number);
-			return sqrt * sqrt == number;
-		}
+	private static boolean isPerfectSquare(int number) {
+		int sqrt = (int) Math.sqrt(number);
+		return sqrt * sqrt == number;
+	}
 }
 
 class NumberWeight {
