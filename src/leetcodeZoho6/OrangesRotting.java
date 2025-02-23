@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class OrangesRotting {
 	public static void main(String[] args) {
-		int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
+		int[][] grid = { { 0,2 }};
 		System.out.println(findMinNoOfMinutes(grid));
 	}
 

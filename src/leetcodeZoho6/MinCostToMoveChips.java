@@ -12,7 +12,6 @@ class MinCostToMoveChips {
 				oddCount++;
 		}
 
-		// Move smaller group to the other type
 		return Math.min(evenCount, oddCount);
 	}
 

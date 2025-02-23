@@ -1,71 +1,56 @@
 package leetcodeZoho3;
 
-import java.util.Stack;
-
 public class CelebrityProblem {
 
-    public static int findCelebrity(int[][] matrix, int n) {
-        Stack<Integer> stack = new Stack<>();
+	public static int findCelebrity(int[][] matrix, int n) {
+		int candidate = 0;
 
-        for (int i = 0; i < n; i++) {
-            stack.push(i);
-        }
+		// Step 1: Find the potential celebrity
+		for (int i = 1; i < n; i++) {
+			if (matrix[candidate][i] == 1) {
+				candidate = i; // Candidate cannot be previous person
+			}
+		}
 
-        while (stack.size() > 1) {
-            int a = stack.pop();
-            int b = stack.pop();
+		// Step 2: Verify if candidate is an actual celebrity
+		for (int i = 0; i < n; i++) {
+			if (i != candidate) {
+				// Celebrity should be known by everyone and should know no one
+				if (matrix[candidate][i] == 1 || matrix[i][candidate] == 0) {
+					return -1; // No valid celebrity found
+				}
+			}
+		}
 
-            if (matrix[a][b] == 1) {
-                // a knows b, so a can't be a celebrity
-                stack.push(b);
-            } else {
-                // a doesn't know b, so b can't be a celebrity
-                stack.push(a);
-            }
-        }
+		return candidate; // Return the celebrity index
+	}
 
-        int candidate = stack.pop();
+	public static void main(String[] args) {
+		int[][] matrix1 = { { 0, 0, 1, 0 }, 
+							{ 0, 0, 1, 0 }, 
+							{ 0, 0, 0, 0 }, 
+							{ 0, 0, 1, 0 } };
 
-        // Verify if the candidate is a celebrity
-        for (int i = 0; i < n; i++) {
-            // Candidate should not know anyone and everyone should know the candidate
-            if (i != candidate && (matrix[candidate][i] == 1 || matrix[i][candidate] == 0)) {
-                return -1;
-            }
-        }
-        return candidate;
-    }
+		int[][] matrix2 = { { 0, 0, 1, 0 }, 
+							{ 0, 0, 1, 0 }, 
+							{ 0, 1, 0, 0 }, 
+							{ 0, 0, 1, 0 } };
 
-    public static void main(String[] args) {
-        int[][] matrix1 = {
-            {0, 0, 1, 0},
-            {0, 0, 1, 0},
-            {0, 0, 0, 0},
-            {0, 0, 1, 0}
-        };
+		int n1 = matrix1.length;
+		int n2 = matrix2.length;
 
-        int[][] matrix2 = {
-            {0, 0, 1, 0},
-            {0, 0, 1, 0},
-            {0, 1, 0, 0},
-            {0, 0, 1, 0}
-        };
+		int celebrity1 = findCelebrity(matrix1, n1);
+		if (celebrity1 == -1) {
+			System.out.println("No celebrity");
+		} else {
+			System.out.println("Celebrity ID: " + celebrity1);
+		}
 
-        int n1 = matrix1.length;
-        int n2 = matrix2.length;
-
-        int celebrity1 = findCelebrity(matrix1, n1);
-        if (celebrity1 == -1) {
-            System.out.println("No celebrity");
-        } else {
-            System.out.println("Celebrity ID: " + celebrity1);
-        }
-
-        int celebrity2 = findCelebrity(matrix2, n2);
-        if (celebrity2 == -1) {
-            System.out.println("No celebrity");
-        } else {
-            System.out.println("Celebrity ID: " + celebrity2);
-        }
-    }
+		int celebrity2 = findCelebrity(matrix2, n2);
+		if (celebrity2 == -1) {
+			System.out.println("No celebrity");
+		} else {
+			System.out.println("Celebrity ID: " + celebrity2);
+		}
+	}
 }

@@ -5,7 +5,8 @@ public class PatternProgram {
 		int size=5;
 		for(int i=0;i<(size*2)-1 ;i++) {
 			for(int j=0;j<size;j++)
-				System.out.println("-");
+				System.out.print(i);
+			System.out.println();
 		}
 	}
 
