@@ -16,8 +16,8 @@ public class MaxSubSet {
 			max=sum;
 		}
 		if(index==arr.length) {
-			System.out.println(sum);
-			System.out.println(list);
+//			System.out.println(sum);
+//			System.out.println(list);
 			return;
 		}
 				
