@@ -19,7 +19,7 @@ public class SortArray {
 		// sort odd numbers in ascending
 		for (int i = 0; i < j - 1; i++) {
 			for (int k = 1; k < j - i; k++) {
-				if (arr[k - 1] > arr[k]) {
+				if (arr[k - 1] < arr[k]) {
 					int temp = arr[k - 1];
 					arr[k - 1] = arr[k];
 					arr[k] = temp;
@@ -30,7 +30,7 @@ public class SortArray {
 		// sort even numbers descending
 		for (int i = 0; i < arr.length - j - 1; i++) {
 			for (int k = j; k < arr.length - i; k++) {
-				if (arr[k - 1] < arr[k]) {
+				if (arr[k - 1] > arr[k]) {
 					int temp = arr[k - 1];
 					arr[k - 1] = arr[k];
 					arr[k] = temp;

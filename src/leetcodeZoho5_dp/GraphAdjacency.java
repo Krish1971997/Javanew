@@ -12,6 +12,12 @@ public class GraphAdjacency {
     // Add an edge to the graph (undirected)
     public void addEdge(int u, int v) {
         adjList.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
+        //equal to above inbuilt function
+//        if (!adjList.containsKey(u)) {
+//            adjList.put(u, new ArrayList<>()); // Initialize the list if key is not present
+//        }
+//        adjList.get(u).add(v); 
+        
         //adjList.computeIfAbsent(v, k -> new ArrayList<>()).add(u);
     }
 

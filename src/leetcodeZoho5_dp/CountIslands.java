@@ -24,7 +24,7 @@ public class CountIslands {
 				if (grid[i][j] == 1 && !visited[i][j]) {
 					islandCount++;
 					dfs(grid, visited, i, j);
-					System.out.println();
+					// System.out.println();
 				}
 			}
 		}
@@ -46,7 +46,8 @@ public class CountIslands {
 				System.out.println("New Row,col : (" + newRow + " , " + newCol + ")");
 
 			// Check boundaries and visit unvisited land
-			if (newRow >= 0 && newRow < grid.length && newCol >= 0 && newCol < grid[0].length
+			if (newRow >= 0 && newRow < grid.length && newCol >= 0 && 
+					newCol < grid[0].length
 					&& grid[newRow][newCol] == 1 && !visited[newRow][newCol]) {
 				dfs(grid, visited, newRow, newCol);
 			}

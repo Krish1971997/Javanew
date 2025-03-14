@@ -20,14 +20,17 @@ public class TrappingRainWater {
 		}
 		System.out.println(Arrays.toString(leftarr));
 
+		
 		rightarr[len - 1] = arr[len - 1];
 		for (int i = rightarr.length - 2; i >= 0; i--) {
 			rightarr[i] = Math.max(rightarr[i + 1], arr[i]);
 		}
 		System.out.println(Arrays.toString(rightarr));
+		
 		int total = 0;
 		for (int i = 0; i < rightarr.length; i++) {
 			int min = Math.min(leftarr[i], rightarr[i]);
+			System.out.print(min+", ");
 			total += min - arr[i];
 		}
 		return total;

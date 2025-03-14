@@ -63,7 +63,7 @@ public class Z13_RemoveFragment {
 			char ch = s.charAt(i);
 			if (ch == ' ' && sb.length() > 0) {
 				word[wordidx++] = sb.toString();
-				sb = new StringBuilder();
+				sb.setLength(0);
 			} else
 				sb.append(ch);
 		}

@@ -3,8 +3,8 @@ package geeksforgeeksZoho;
 public class FindSubArrayWithGivenSum {
 
 	public static void main(String[] args) {
-		int[] arr1 = { 1, 4, 20, 3, 10, 5 };
-		int sum1 = 33;
+		int[] arr1 = {15, 2, 4, 8, 9, 5, 10, 23 };
+		int sum1 = 23;
 		findSubarrayWithSum(arr1, sum1); // Output: Sum found between indexes 2 and 4
 	}
 

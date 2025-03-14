@@ -17,14 +17,14 @@ public class PatternZoho {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
             	
-                if (i == j || i + j == length - 1) {
-                    System.out.print(str.charAt(i % str.length()) + "  ");
+            	if (i == length / 2) {
+                    System.out.print(str.charAt(j % str.length()) + " ");
                 }
-                else if (i == length / 2) {
-                    System.out.print(str.charAt(j % str.length()) + "  ");
+            	else if (i == j || i + j == length - 1) {
+                    System.out.print(str.charAt(i % str.length()) + "  ");
                 }
                 else if (j == length / 2) {
-                    System.out.print(str.charAt(i % str.length()) + "  ");
+                    System.out.print(str.charAt(i % str.length()) + " ");
                 }
                 else {
                     System.out.print("  ");

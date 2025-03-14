@@ -4,7 +4,7 @@ public class SingleNonRepeatingElement {
     public static int findSingleNonRepeatingElement(int[] nums) {
         int result = 0;
         for (int num : nums) {
-            result ^= num;
+            result = result ^ num;
             	//result= 4^1^2^1^2 means
             	//result =4^0  ^0
             	//result=4
