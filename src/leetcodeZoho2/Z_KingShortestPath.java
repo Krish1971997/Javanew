@@ -5,8 +5,8 @@ import java.util.Queue;
 
 public class Z_KingShortestPath {
 	    // Define the 8 possible moves for the king
-	    private static final int[] ROW_MOVES = {-1, -1, -1, 0, 0, 1, 1, 1};
-	    private static final int[] COL_MOVES = {-1, 0, 1, -1, 1, -1, 0, 1};
+	    private static final int[] ROW_MOVES = {-1, -1, -1,  0, 0,  1, 1, 1};
+	    private static final int[] COL_MOVES = {-1,  0,  1, -1, 1, -1, 0, 1};
 
 	    public static void main(String[] args) {
 	        int startX = 0, startY = 0; // Starting position (0, 0)

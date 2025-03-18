@@ -11,15 +11,15 @@ public class PrintPalindrome_optimize {
 
 		if(start==end)
 			return 1;
-		if(start+1==end &&(s.charAt(start)==s.charAt(end)) )
-			return 2;
+//		if(start+1==end &&(s.charAt(start)==s.charAt(end)) )
+//			return 2;
 		
 		if(mem[start][end]!=0) {
 			return mem[start][end];
 		}
 		
 		if(s.charAt(start)==s.charAt(end)) {
-			return 2+find(s, start+1, end-1, mem);
+			return mem[start][end]=2+find(s, start+1, end-1, mem);
 		}
 		
 		int left=find(s, start+1, end, mem);

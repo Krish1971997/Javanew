@@ -10,6 +10,11 @@ import java.util.Queue;
 import java.util.TreeSet;
 
 class InvalidDestinationException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public InvalidDestinationException() {
 		System.out.println("Destination must be greater than source or different from source.\n");
 	}
@@ -26,7 +31,7 @@ public class Train {
 	private final Map<Integer, Ticket> totalTicketInfo = new HashMap<>();
 	private boolean isTrainWaitingListAvailable = false;
 	private final Queue<Ticket> pnrQueue = new LinkedList<>();
-	private static final List<String> summary = new ArrayList<>();
+	//private static final List<String> summary = new ArrayList<>();
 
 	public Train(List<String> stoppages) {
 		this.stoppages = stoppages;
@@ -48,8 +53,8 @@ public class Train {
 		List<Integer> noOfSeatAvailableList = ticketToDifferentDestinations.get(source);
 		int numOfSeats = MAX_SEATS;
 
-		int destinationIndex = stoppages.indexOf(destination);
 		int sourceIndex = stoppages.indexOf(source);
+		int destinationIndex = stoppages.indexOf(destination);
 
 		for (int i = sourceIndex + 1; i <= destinationIndex; i++) {
 			numOfSeats = Math.min(noOfSeatAvailableList.get(i), numOfSeats);
@@ -66,8 +71,8 @@ public class Train {
 	}
 
 	public Ticket bookTicket(User user) {
-		String ticketSource = user.getUserSource().toUpperCase();
-		String ticketDestination = user.getUserDestination().toUpperCase();
+		String ticketSource = user.getUserSource();
+		String ticketDestination = user.getUserDestination();
 		int ticketCount = user.getNoOfTickets();
 
 		try {
@@ -127,7 +132,7 @@ public class Train {
 			List<Integer> noOfSeatAvailableList = ticketToDifferentDestinations.get(stoppages.get(i));
 
 			for (int j = 0; j < noOfSeatAvailableList.size(); j++) {
-				if (i < j && j > sourceIndex && destinationIndex >= j) {
+				if (i < j && j >= sourceIndex && j<=destinationIndex) {
 					int numOfSeats = noOfSeatAvailableList.get(j);
 					if ("FromTicketCancellation".equals(callingFrom)) {
 						numOfSeats += count;
@@ -159,11 +164,11 @@ public class Train {
 		}
 		ticket.setSeatNums(seats);
 
-		String from = "FromTicketCancellation";
 		System.out.println("Cancelled " + noOfSeats + " seats successfully");
 
 		String source = ticket.getSource();
 		String destination = ticket.getDestination();
+		String from = "FromTicketCancellation";
 		updateTicketAvailability(source, destination, noOfSeats, from);
 
 //		summary(ticket, "cancel", cancelledSeats);
@@ -189,13 +194,13 @@ public class Train {
 					String from = "TicketBooking";
 					updateTicketAvailability(source, destination, noOfTickets, from);
 					currentWaitingList -= noOfTickets;
-					if(pnrQueue.size()==1)
-						isTrainWaitingListAvailable = false;
 
 					List<Integer> seats = seatsAssign(noOfTickets, currentAvailable);
 					ticket.setSeatNums(seats);
 					ticket.setBookstatus(TrainBookingStatus.Booked);
 					totalTicketInfo.put(pnr, ticket);
+					if(pnrQueue.size()==1)
+						isTrainWaitingListAvailable = false;
 					pnrQueue.poll();
 					// summary(ticket, "booking", new TreeSet<>(seats));
 				}
@@ -275,11 +280,11 @@ public class Train {
 	public static List<Integer> seatsAssign(int numOfTickets, int currentAvailability) {
 
 		ArrayList<Integer> list = new ArrayList<>();
-		int temp;
+		int seatNo;
 		for (int i = 0; i < numOfTickets; i++) {
-			temp = MAX_SEATS - currentAvailability + 1;
+			seatNo = MAX_SEATS - currentAvailability + 1;
 			currentAvailability--;
-			list.add(temp);
+			list.add(seatNo);
 		}
 		System.out.println("list --> " + list);
 		return list;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ProductOFArrayItself {
 	public static void main(String[] args) {
 		int[] nums = { 4, 3, 2, 1 };
-		//int[] nums = { -1,1,0,-3,3};
+		// int[] nums = { -1,1,0,-3,3};
 		System.out.println(Arrays.toString(productExceptSelf(nums)));
 	}
 
@@ -26,9 +26,9 @@ public class ProductOFArrayItself {
 
 		System.out.println(Arrays.toString(suffix));
 		for (int i = 0; i < n; i++) {
-			//System.out.println("prefix[i] : "+prefix[i] +"--> suffix[i] :"+suffix[i]);
+			// System.out.println("prefix[i] : "+prefix[i] +"--> suffix[i] :"+suffix[i]);
 			result[i] = prefix[i] * suffix[i];
-			}
+		}
 		return result;
 	}
 }

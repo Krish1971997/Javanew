@@ -22,7 +22,7 @@ public class CoinSum {
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
 			list.add(arr[i]);
-			System.out.println(target);
+			//System.out.println(target);
 			count = count + find(arr, target - arr[i], list);
 			list.remove(list.size()-1);
 		}

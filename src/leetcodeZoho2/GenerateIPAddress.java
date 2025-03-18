@@ -23,7 +23,7 @@ public class GenerateIPAddress {
             if (start == s.length()) {
                 //res.add(String.join(".", segments));
             	res.add(segments.get(0) + "." + segments.get(1) + "." + segments.get(2) + "." + segments.get(3));
-                return;
+//                return;
             }
             return;
         }
@@ -38,7 +38,7 @@ public class GenerateIPAddress {
                 continue;
             }
             segments.add(segment);
-             backtrack(s, i + 1, segments, res);
+            backtrack(s, i + 1, segments, res);
             segments.remove(segments.size() - 1);
         }
     }
