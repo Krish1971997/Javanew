@@ -46,7 +46,7 @@ public class ConnectFour {
 			}
 		}
 		return false;
-	}
+	} 
 
 	private boolean checkWin(char player) {
 		// Check horizontal

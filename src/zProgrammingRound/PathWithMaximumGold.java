@@ -3,6 +3,13 @@ package zProgrammingRound;
 public class PathWithMaximumGold {
 	private static final int[][] DIRECTIONS = { { -1, 1 }, { 0, 1 }, { 1, 1 } };
 
+	public static void main(String[] args) {
+		int[][] grid = { { 0, 1, 3 }, { 1, 4, 2 }, { 0, 2, 5 } };
+		PathWithMaximumGold solution = new PathWithMaximumGold();
+		int maxgold = solution.getMaximumGold(grid);
+		System.out.println("Maximum Gold Collected: " + maxgold);
+	}
+
 	public int getMaximumGold(int[][] grid) {
 		int maxGold = 0;
 
@@ -22,26 +29,19 @@ public class PathWithMaximumGold {
 		grid[row][col] = 0;
 
 		int maxGold = 0;
-		for (int[] direction : DIRECTIONS) { //modify start
+		for (int[] direction : DIRECTIONS) { // modify start
 			int newRow = row + direction[0];
 			int newCol = col + direction[1];
 			maxGold = Math.max(maxGold, dfs(grid, newRow, newCol));
-		} //modify
-		
-   /** maxGold = Math.max(maxGold, collectGold(grid, i - 1, j + 1)); // second method
-        maxGold = Math.max(maxGold, collectGold(grid, i, j + 1));
-        maxGold = Math.max(maxGold, collectGold(grid, i + 1, j + 1)); */
+		} // modify
+
+		/**
+		 * maxGold = Math.max(maxGold, collectGold(grid, i - 1, j + 1)); // second
+		 * method maxGold = Math.max(maxGold, collectGold(grid, i, j + 1)); maxGold =
+		 * Math.max(maxGold, collectGold(grid, i + 1, j + 1));
+		 */
 
 		grid[row][col] = gold;
 		return gold + maxGold;
-	}
-
-	public static void main(String[] args) {
-		int[][] grid = { { 0, 1, 3 }, 
-							 { 1, 4, 2 }, 
-							 { 0, 2, 5 } };
-		PathWithMaximumGold solution = new PathWithMaximumGold();
-		int maxgold = solution.getMaximumGold(grid);
-		System.out.println("Maximum Gold Collected: " + maxgold);
 	}
 }

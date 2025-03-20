@@ -22,7 +22,7 @@ public class SubsequenceCheck {
 
 		int i = 0, j = 0;
 
-		if (n > m) {
+		if (n >= m) {
 			while (i < m && j < n) {
 				if (str1.charAt(i) == str2.charAt(j)) {
 					i++;

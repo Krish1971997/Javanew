@@ -24,8 +24,8 @@ public class Program3 {
 	}
 	
 	private static int findUnMatchedEarBud1(int[] arr) {
-		int number=0;
-		for (int i = 0; i < arr.length; i++) {
+		int number=arr[0];
+		for (int i = 1; i < arr.length; i++) {
 			number=number^arr[i];
 		}
 		return number;

@@ -3,7 +3,10 @@ package leetcodeZoho5_dp;
 public class CountIslands {
 
 	public static void main(String[] args) {
-		int[][] grid = { { 1, 1, 0, 1, 1 }, { 1, 1, 0, 1, 1 }, { 0, 0, 0, 1, 1 }, { 0, 0, 0, 0, 0 } };
+		int[][] grid = { { 1, 1, 0, 0, 0 }, 
+				  { 1, 1, 0, 0, 0 }, 
+				  { 0, 0, 1, 0, 0 },
+				  { 0, 0, 0, 1, 1 } };
 
 		int numberOfIslands = countIslands(grid);
 		System.out.println("Number of Islands: " + numberOfIslands);

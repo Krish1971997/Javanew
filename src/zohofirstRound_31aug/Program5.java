@@ -21,10 +21,10 @@ public class Program5 {
 		return result;
 	}
 
-	private static void findUniqueCombinations(int[] nums, int target, List<Integer> current, List<List<Integer>> result,
-			int index) {
+	private static void findUniqueCombinations(int[] nums, int target, List<Integer> current,
+			List<List<Integer>> result, int index) {
 
-		if(target==0) {
+		if (target == 0) {
 			result.add(new ArrayList<>(current));
 			return;
 		}

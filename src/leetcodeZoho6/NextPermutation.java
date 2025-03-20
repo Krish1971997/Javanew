@@ -2,6 +2,7 @@ package leetcodeZoho6;
 
 public class NextPermutation {
 	public static String nextPermutation(int n) {
+		
 		char[] arr = String.valueOf(n).toCharArray();
 		int len = arr.length;
 

@@ -3,7 +3,7 @@ package zoho1;
 public class ExcelNameFinderUsingNumber {
 
 	public static void main(String[] args) {
-		int n=28;
+		int n=732;
 		StringBuilder sb=new StringBuilder();
 		int temp=n;
 		

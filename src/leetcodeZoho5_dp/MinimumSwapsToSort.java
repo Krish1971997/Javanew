@@ -7,46 +7,44 @@ import java.util.List;
 //working
 public class MinimumSwapsToSort {
 	public static void swap(int[] arr) {
-        int swap = 0;
-        List<int[]> list = new ArrayList<>();
+		int swap = 0;
+		List<int[]> list = new ArrayList<>();
 
-        for (int i = 0; i < arr.length; i++) {
-           // int min = arr[i];
-            int min_index = i;
+		for (int i = 0; i < arr.length; i++) {
+			int min_index = i;
 
-            // Find the minimum element in the unsorted part of the array
-            for (int j = i + 1; j < arr.length; j++) {
-            	if (arr[j] < arr[min_index]) { //if (arr[j] < min) {
-                    //min = arr[j];
-                    min_index = j;
-                }
-            }
+			// Find the minimum element in the unsorted part of the array
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[j] < arr[min_index]) { // if (arr[j] < min) {
+					// min = arr[j];
+					min_index = j;
+				}
+			}
 
-            // If the minimum element is not at the correct position, swap it
-            if (min_index != i) {
-                list.add(new int[]{i, min_index});
-                swap++;
+			// If the minimum element is not at the correct position, swap it
+			if (min_index != i) {
+				list.add(new int[] { i, min_index });
+				swap++;
 
-                // Perform the swap
-                int temp = arr[i];
-                arr[i] = arr[min_index];
-                arr[min_index] = temp;
-            }
-        }
+				int temp = arr[i];
+				arr[i] = arr[min_index];
+				arr[min_index] = temp;
+			}
+		}
 
-        System.out.println("Number of swaps: " + swap);
-        System.out.println("Swapped indices:");
-        for (int[] a : list) {
-            System.out.println(a[0] + " <--> " + a[1]);
-        }
-        System.out.println("Sorted Array: " + Arrays.toString(arr));
-    }
+		System.out.println("Number of swaps: " + swap);
+		System.out.println("Swapped indices:");
+		for (int[] a : list) {
+			System.out.println(a[0] + " <--> " + a[1]);
+		}
+		System.out.println("Sorted Array: " + Arrays.toString(arr));
+	}
 
-    public static void main(String[] args) {
-        int[] temp = {3, 2, 4, 1, 5};
-        System.out.println("Original Array: " + Arrays.toString(temp));
-        swap(temp);
-    }
+	public static void main(String[] args) {
+		int[] temp = { 3, 2, 4, 1, 5 };
+		System.out.println("Original Array: " + Arrays.toString(temp));
+		swap(temp);
+	}
 
 }
 //public static int minSwaps(int[] arr) {

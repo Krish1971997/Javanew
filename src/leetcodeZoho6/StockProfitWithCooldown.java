@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+//not working
 class StockProfitWithCooldown {
 	public static void maxProfit(int[] prices) {
 		int n = prices.length;

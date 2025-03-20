@@ -28,6 +28,10 @@ class KnightMoves {
         while (!queue.isEmpty()) {
             int[] current = queue.poll();
             int x = current[0], y = current[1], steps = current[2];
+            
+            if (x == endX && y == endY) {
+                return steps;
+            }
 
             // Explore all 8 possible knight moves
             for (int[] dir : directions) {
@@ -37,9 +41,7 @@ class KnightMoves {
                 // If within board and not visited
                 if (isValid(newX, newY) && !visited[newX][newY]) {
                     // If destination reached
-                    if (newX == endX && newY == endY) {
-                        return steps + 1;
-                    }
+
                     queue.add(new int[]{newX, newY, steps + 1});
                     visited[newX][newY] = true;
                 }

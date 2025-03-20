@@ -9,6 +9,7 @@ public class DecodeWays {
 	}
 	public static int numDecodings(String s) {
 		int n = s.length();
+		
 		if (n == 0 || s.charAt(0) == '0') {
 			return 0;
 		}
