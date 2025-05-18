@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Z_PseudoBinary {
     public static void main(String[] args) {
-        int number = 41;
+        int number = 47;
         List<Integer> result = findPseudoBinarySum(number);
         System.out.println("The pseudo-binary numbers are: " + result);
     }

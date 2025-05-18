@@ -19,8 +19,8 @@ public class StringManipulation {
 		for (int i = 0; i < input.length(); i++) {
 			if (input.length() >= i + patternLength && input.substring(i, i + patternLength).equals(pattern)) {
 				if (i == previousIndex) {
-					previousIndex = i + patternLength + 1;
-					i = i + patternLength;
+					previousIndex = patternLength + i + 1;
+					i += patternLength;
 					continue;
 				}
 				previousIndex = i + patternLength + 1;

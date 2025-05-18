@@ -11,7 +11,7 @@ public class JumpGameII {
         int furthest = 0;   
  
         for (int i = 0; i < nums.length - 1; i++) {
-            furthest = Math.max(furthest, i + nums[i]); // Update furthest point reachable
+        	furthest = Math.max(furthest, i + nums[i]); // Update furthest point reachable
 
             if (i == currentEnd) { // If we've reached the end of the current jump range
                 jumps++;           // Increment jump count

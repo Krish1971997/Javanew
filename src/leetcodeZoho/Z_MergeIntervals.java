@@ -42,9 +42,9 @@ public class Z_MergeIntervals {
 		
 		int current[] = arr[0];
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i][0] < current[1]) {
-				current[1] = Math.max(arr[i][0], current[1]);
-			} else {
+			if (arr[i][0] > current[1]) {
+//				current[1] = Math.max(arr[i][0], current[1]);
+//			} else {
 				merged.add(current);
 				current = arr[i];
 			}

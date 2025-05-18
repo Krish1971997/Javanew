@@ -8,32 +8,32 @@ public class PatternZoho {
 	}
 
 	private static void printPattern(String str) {
-        int length = str.length();
-        
-        if (length % 2 == 0) {
-            length = length + 1;
-        }
+		int length = str.length();
 
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-            	
-            	if (i == length / 2) {
-                    System.out.print(str.charAt(j % str.length()) + " ");
-                }
-            	else if (i == j || i + j == length - 1) {
-                    System.out.print(str.charAt(i % str.length()) + "  ");
-                }
-                else if (j == length / 2) {
-                    System.out.print(str.charAt(i % str.length()) + " ");
-                }
-                else {
-                    System.out.print("  ");
-                }
-            }
-            System.out.println();
-        }
+		if (length % 2 == 0) {
+			int mid = length / 2;
+			StringBuilder sb = new StringBuilder(str);
+			sb.insert(mid, '*');
+			str = sb.toString();
+			length = str.length();
+		}
 
-    }
+		for (int i = 0; i < length; i++) {
+			for (int j = 0; j < length; j++) {
 
+				if (i == length / 2) {
+					System.out.print(str.charAt(j % str.length()) + " ");
+				} else if (i == j || i + j == length - 1) {
+					System.out.print(str.charAt(i % str.length()) + "  ");
+				} else if (j == length / 2) {
+					System.out.print(str.charAt(i % str.length()) + " ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+	}
 
 }

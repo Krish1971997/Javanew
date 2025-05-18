@@ -28,7 +28,7 @@ public class SortingArray {
 				}
 			}
 		}
-
+		
 		Arrays.fill(res, -1);
 		for (int i = 0,k=0, j = res.length - 1; i < arr.length; i++) {
 			if(res[i]==-1 && i < arr.length) {

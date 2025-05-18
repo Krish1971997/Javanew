@@ -28,7 +28,6 @@ public class MostCommonWord {
 		String mostCommon = null;
 
 		for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
-			boolean isBanned = false;
 
 			for (int i = 0; i < banned.length; i++) {
 				if (maxCount < entry.getValue() && !entry.getKey().equals(banned[i])) {

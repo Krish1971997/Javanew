@@ -35,6 +35,7 @@ class NextPermutationWithoutInbuilt {
 
 		// Step 3: Find the smallest digit larger than digits[i] to swap
 		int j = len - 1;
+
 		while (digits[j] <= digits[i]) {
 			j--;
 		}

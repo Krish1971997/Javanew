@@ -14,30 +14,31 @@ public class LargestNumberWithGivenSumAndDigits {
 	}
 
 	public static String largestNumber(int s, int d) {
-		if (s > 9 * d)
-			return "Not possible";
+        // Check if number is possible: sum should be between d (all 1s) and 9*d (all 9s)
+        if (s < d || s > 9 * d) {
+            return "Not possible";
+        }
 
-		int[] result = new int[d];
-		Arrays.fill(result, 9); // Initialize all digits with 9
+        int[] result = new int[d];
+        // Start with all 1s to avoid zeros
+        Arrays.fill(result, 1);
+        s -= d; // Subtract 1 for each digit
 
-		for (int i = 0; i < d; i++) {
-			if (s >= 9) {
-				result[i] = 9;
-				s -= 9;
-			} else {
-				result[i] = s;
-				s = 0;
-			}
-		}
+        // Distribute remaining sum starting from left to maximize the number
+        for (int i = 0; i < d && s > 0; i++) {
+            int add = Math.min(s, 8); // Can add up to 8 to make digit 9 (1 + 8)
+            result[i] += add;
+            s -= add;
+        }
 
-		StringBuilder sb = new StringBuilder();
-		for (int digit : result) {
-			sb.append(digit);
-		}
+        // Build the result string
+        StringBuilder sb = new StringBuilder();
+        for (int digit : result) {
+            sb.append(digit);
+        }
 
-		return sb.toString();
-
-	}
+        return sb.toString();
+    }
 	/*
 	 * public static String largestNumber(int s, int d) { if (s > 9 * d) return
 	 * "Not possible";

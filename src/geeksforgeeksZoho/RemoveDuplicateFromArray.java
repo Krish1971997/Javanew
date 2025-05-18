@@ -28,6 +28,6 @@ public class RemoveDuplicateFromArray {
 		//arr[unique++] = arr[arr.length - 1];
 
 		for (int i = 0; i < unique; i++)
-			System.out.println(arr[i]);
+			System.out.print(arr[i]+" ");
 	}
 }

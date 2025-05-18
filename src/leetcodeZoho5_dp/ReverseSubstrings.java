@@ -1,43 +1,41 @@
 package leetcodeZoho5_dp;
 
-import java.util.*;
-
 public class ReverseSubstrings {
-	public static String reverseParentheses(String str) {
-		Stack<Character> stack = new Stack<>();
+	public static String reverseParentheses(String s) {
+        char[] stack = new char[s.length()];
+        int top = -1; // Stack pointer
 
-		for (char ch : str.toCharArray()) {
-			if (ch == ')') {
-				// Extract substring inside the latest parentheses
-				StringBuilder temp = new StringBuilder();
-				while (!stack.isEmpty() && stack.peek() != '(') {
-					temp.append(stack.pop());
-				}
-				stack.pop(); // Remove the '(' from the stack
+        for (char c : s.toCharArray()) {
+            if (c != ')') {
+                stack[++top] = c;
+            } else {
+                StringBuilder temp = new StringBuilder();
+                
+                while (top >= 0 && stack[top] != '(') {
+                    temp.append(stack[top--]);
+                }
+                top--; // Remove '('
 
-				// Push reversed substring back to the stack
-				for (char c : temp.toString().toCharArray()) {
-					stack.push(c);
-				}
-			} else {
-				stack.push(ch);
-			}
-		}
+                for (char ch : temp.toString().toCharArray()) {
+                    stack[++top] = ch;
+                }
+            }
+        }
 
-		// Convert stack to string
-		StringBuilder result = new StringBuilder();
-		while (!stack.isEmpty()) {
-			result.append(stack.pop());
-		}
+        // Build final result
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i <= top; i++) {
+            result.append(stack[i]);
+        }
 
-		return result.reverse().toString();
-	}
+        return result.toString();
+    }
 
 	public static void main(String[] args) {
-		String str1 = "(skeeg(for)skeeg)";
-		String str2 = "((ng)ipm(ca))";
+		//String str1 = "(skeeg(for)skeeg)";
+		String str2 = "(ed(et(oc))el)";
 
-		System.out.println(reverseParentheses(str1)); // Output: geeksforgeeks
+		//System.out.println(reverseParentheses(str1)); // Output: geeksforgeeks
 		System.out.println(reverseParentheses(str2)); // Output: camping
 	}
 }
