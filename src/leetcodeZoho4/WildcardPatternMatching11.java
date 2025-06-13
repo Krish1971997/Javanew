@@ -9,7 +9,7 @@ public class WildcardPatternMatching11 {
 	public static void main(String[] args) {
 		String s1 = "XZXY";
 		String s2 = "X**?";
-	int[][] mem = new int[s1.length() + 1][s2.length() + 1];
+		int[][] mem = new int[s1.length() + 1][s2.length() + 1];
 		for (int i = 0; i < mem.length; i++) {
 			Arrays.fill(mem[i], -1);
 		}
@@ -28,8 +28,7 @@ public class WildcardPatternMatching11 {
 		}
 
 		if (s2.charAt(j) == '*') {
-			boolean res = find(s1, s2, i, j + 1, mem) || 
-						(i < s1.length() && find(s1, s2, i + 1, j, mem));
+			boolean res = find(s1, s2, i, j + 1, mem) || (i < s1.length() && find(s1, s2, i + 1, j, mem));
 			mem[i][j] = res ? 1 : 0;
 			return res;
 		}
