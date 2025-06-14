@@ -8,16 +8,16 @@ public class ZMatrixValidator {
 
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
-				if (row == 0 || row == rows - 1) {
+				if (row == 0 || row == rows - 1) { //first row and last row
 					if (matrix[row][col] == 0) {
 						return false;
 					}
-				} else if (rows-1 == row + col) {
+				} else if (rows-1 == row + col) { //cross X
 					if (matrix[row][col] == 0) {
 						return false;
 					}
 				} else {
-					if (matrix[row][col] != 0) {
+					if (matrix[row][col] != 0) { 
 						return false;
 					}
 				}
