@@ -10,11 +10,6 @@ import java.util.Queue;
 import java.util.TreeSet;
 
 class InvalidDestinationException extends Exception {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	public InvalidDestinationException() {
 		System.out.println("Destination must be greater than source or different from source.\n");
 	}
@@ -31,7 +26,7 @@ public class Train {
 	private final Map<Integer, Ticket> totalTicketInfo = new HashMap<>();
 	private boolean isTrainWaitingListAvailable = false;
 	private final Queue<Ticket> pnrQueue = new LinkedList<>();
-	//private static final List<String> summary = new ArrayList<>();
+	private static final List<String> summary = new ArrayList<>();
 
 	public Train(List<String> stoppages) {
 		this.stoppages = stoppages;
@@ -132,7 +127,7 @@ public class Train {
 			List<Integer> noOfSeatAvailableList = ticketToDifferentDestinations.get(stoppages.get(i));
 
 			for (int j = 0; j < noOfSeatAvailableList.size(); j++) {
-				if (i < j && j >= sourceIndex && j<=destinationIndex) {
+				if (i < j && j >= sourceIndex && j <= destinationIndex) {
 					int numOfSeats = noOfSeatAvailableList.get(j);
 					if ("FromTicketCancellation".equals(callingFrom)) {
 						numOfSeats += count;
@@ -199,7 +194,7 @@ public class Train {
 					ticket.setSeatNums(seats);
 					ticket.setBookstatus(TrainBookingStatus.Booked);
 					totalTicketInfo.put(pnr, ticket);
-					if(pnrQueue.size()==1)
+					if (pnrQueue.size() == 1)
 						isTrainWaitingListAvailable = false;
 					pnrQueue.poll();
 					// summary(ticket, "booking", new TreeSet<>(seats));
