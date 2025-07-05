@@ -29,7 +29,7 @@ public class LongestIncreasingPath {
 				max = Math.max(max, dfs(matrix, i, j, dp));
 			}
 		}
-		System.out.println("Test");
+		//System.out.println("Test");
 
 		return max;
 	}
