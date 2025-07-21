@@ -1,4 +1,4 @@
-package test4;
+package leetcodeZoho6;
 
 public class FindTheHighestAltitude {
 	public static void main(String[] args) {
