@@ -26,7 +26,7 @@ public class PatternZoho {
 				} else if (i == j || i + j == length - 1) {
 					System.out.print(str.charAt(i % str.length()) + "  ");
 				} else if (j == length / 2) {
-					System.out.print(str.charAt(i % str.length()) + " ");
+					System.out.print(str.charAt(i % str.length()) + "  ");
 				} else {
 					System.out.print("  ");
 				}
