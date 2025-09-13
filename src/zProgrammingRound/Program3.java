@@ -9,7 +9,7 @@ public class Program3 {
 	}
 
 	private static int findNearestNumber(int[] arr, int target) {
-		int closest = arr[0];
+		int nearest = arr[0];
 		int minDiff = Math.abs(target - arr[0]);
 
 		for (int i = 1; i < arr.length; i++) {
@@ -21,7 +21,7 @@ public class Program3 {
 
 			if (currentDiff < minDiff) {
 				minDiff = currentDiff;
-				closest = arr[i];
+				nearest = arr[i];
 			}
 
 			else if (arr[i] > target) {
@@ -29,7 +29,7 @@ public class Program3 {
 			}
 		}
 
-		return closest;
+		return nearest;
 	}
 
 }

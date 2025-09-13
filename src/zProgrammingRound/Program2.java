@@ -8,25 +8,29 @@ public class Program2 {
 	}
 
 	private static void findLongestWord(String str) {
-		String maxWord = "";
+		String maxWord = null;
 		StringBuilder current = new StringBuilder();
 
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
 
 			if (ch == ' ') {
-				if (maxWord.length() < current.length()) {
-					maxWord = current.toString();
-				}
+				maxWord = getMaxWord(maxWord, current);
 				current.setLength(0);
 			} else
 				current.append(ch);
 		}
 
-		if (maxWord.length() < current.length())
-			maxWord = current.toString();
+		maxWord = getMaxWord(maxWord, current);
 
 		System.out.println(maxWord);
+	}
+
+	private static String getMaxWord(String maxWord, StringBuilder current) {
+		if (maxWord.length() < current.length()) {
+			maxWord = current.toString();
+		}
+		return maxWord;
 	}
 
 }

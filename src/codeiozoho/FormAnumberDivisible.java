@@ -8,7 +8,7 @@ public class FormAnumberDivisible {
 			sum+=num[i]%divisible;
 		}
 		
-		if(sum%3==0)
+		if(sum%divisible==0)
 			System.out.println(1);
 		else
 			System.out.println(0);

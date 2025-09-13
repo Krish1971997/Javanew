@@ -8,7 +8,7 @@ public class Program3 {
 		int wholePart = (int) num;
 		double fractionalPart = num - wholePart;
 		int numerator = (int) (fractionalPart * 100); //25
-		int gcd = gcd(numerator, 100); //25
+		int gcd = gcd(numerator, 100); //25  //GCD =Greatest Common Divisor
 		numerator = numerator / gcd;
 		int denominator = 100 / gcd;
 

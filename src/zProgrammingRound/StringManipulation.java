@@ -20,7 +20,7 @@ public class StringManipulation {
 		while (i < input.length()) {
 			if (input.length() >= i + patternLength && input.substring(i, i + patternLength).equals(pattern)) {
 
-				previousIndex = patternLength + i;
+				previousIndex = i + patternLength;
 				i = i + patternLength;
 
 				if (i == previousIndex)

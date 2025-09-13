@@ -1,7 +1,5 @@
 package leetcodeZoho6;
 
-import java.util.*;
-
 public class LongestIncreasingPath {
 	private static final int[][] directions = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 	private static int rows, cols;
@@ -34,21 +32,22 @@ public class LongestIncreasingPath {
 		return max;
 	}
 
-	private int dfs(int[][] matrix, int i, int j, int[][] dp) {
-		if (dp[i][j] != 0)
-			return dp[i][j];
+	private int dfs(int[][] matrix, int row, int col, int[][] dp) {
+		if (dp[row][col] != 0)
+			return dp[row][col];
 
 		int max = 1;
 
 		for (int[] dir : directions) {
-			int x = i + dir[0], y = j + dir[1];
+			int newRow = row + dir[0];
+			int newCol = col + dir[1];
 
-			if (x >= 0 && x < rows && y >= 0 && y < cols && matrix[x][y] > matrix[i][j]) {
-				max = Math.max(max, 1 + dfs(matrix, x, y, dp));
+			if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && matrix[newRow][newCol] > matrix[row][col]) {
+				max = Math.max(max, 1 + dfs(matrix, newRow, newCol, dp));
 			}
 		}
 
-		dp[i][j] = max;
+		dp[row][col] = max;
 		return max;
 	}
 }

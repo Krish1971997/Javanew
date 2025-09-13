@@ -14,10 +14,10 @@ public class PalindromeRearrange {
 		for (int count : frequencyMap.values()) {
 			if (count % 2 != 0)
 				oddCount++;
-		}
-
-		if (oddCount > 1)
-			return 0;
+			
+			if (oddCount > 1)
+				return 0;	
+		}		
 		return 1;
 	}
 

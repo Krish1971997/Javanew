@@ -15,7 +15,7 @@ public class HouseRobberIV {
 		int left = 1, right = 1000000000, ans = -1;
 
 		while (left <= right) {
-			int mid = left + (right - left) / 2;
+			int mid = (left + right) / 2;
 
 			if (canRob(nums, k, mid)) {
 				ans = mid;

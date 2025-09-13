@@ -25,11 +25,12 @@ public class SpeacialArrayReversal {
             }
         }
 
-        StringBuilder sb = new StringBuilder();
-        for (char c : ch) {
-            sb.append(c);
-        }
-
-        System.out.println(sb.toString());
+//        StringBuilder sb = new StringBuilder();
+//        for (char c : ch) {
+//            sb.append(c);
+//        }
+        
+        System.out.println(new String(ch));
+        //System.out.println(sb.toString());
 	}
 }

@@ -9,9 +9,9 @@ public class BaseConversion {
 		StringBuilder result = new StringBuilder();
 
 		while (number > 0) {
-			int remainder = number % base; //13%3  111
+			int remainder = number % base; //13%3  1 1 1
 			result.append(remainder);
-			number /= base; //41
+			number /= base; //4 1
 		}
 
 		// Reverse because we collected digits in reverse order

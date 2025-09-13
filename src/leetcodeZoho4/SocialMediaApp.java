@@ -23,14 +23,14 @@ class User {
 	public void addFriend(User user) {
 		if (!friends.contains(user)) {
 			friends.add(user);
-			System.out.println(username + " is now friends with " + user.getUsername());
+			System.out.println(this.username + " is now friends with " + user.getUsername());
 		}
 	}
 
 	public void createPost(String content) {
 		Post post = new Post(this, content);
 		posts.add(post);
-		System.out.println(username + " created a post: " + content);
+		System.out.println(this.username + " created a post: " + content);
 	}
 
 	public Post getPost() {

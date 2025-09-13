@@ -2,11 +2,9 @@ package leetcodeZoho5_dp;
 
 public class CountIslands {
 
+	// Preferred
 	public static void main(String[] args) {
-		int[][] grid = { { 1, 1, 0, 0, 0 }, 
-				  { 1, 1, 0, 0, 0 }, 
-				  { 0, 0, 1, 0, 0 },
-				  { 0, 0, 0, 1, 1 } };
+		int[][] grid = { { 1, 1, 0, 0, 0 }, { 1, 1, 0, 0, 0 }, { 0, 0, 1, 0, 0 }, { 0, 0, 0, 1, 1 } };
 
 		int numberOfIslands = countIslands(grid);
 		System.out.println("Number of Islands: " + numberOfIslands);
@@ -36,6 +34,7 @@ public class CountIslands {
 	}
 
 	private static void dfs(int[][] grid, boolean[][] visited, int row, int col) {
+		
 		int[] rowDirection = { -1, 1, 0, 0 };
 		int[] colDirection = { 0, 0, -1, 1 };
 
@@ -45,15 +44,18 @@ public class CountIslands {
 			int newRow = row + rowDirection[d];
 			int newCol = col + colDirection[d];
 
-			if (newRow >= 0 && newCol >= 0)
-				System.out.println("New Row,col : (" + newRow + " , " + newCol + ")");
+//			if (newRow >= 0 && newCol >= 0)
+//				System.out.println("New Row,col : (" + newRow + " , " + newCol + ")");
 
 			// Check boundaries and visit unvisited land
-			if (newRow >= 0 && newRow < grid.length && newCol >= 0 && 
-					newCol < grid[0].length
-					&& grid[newRow][newCol] == 1 && !visited[newRow][newCol]) {
+			if (validate(grid, visited, newRow, newCol)) {
 				dfs(grid, visited, newRow, newCol);
 			}
 		}
+	}
+
+	private static boolean validate(int[][] grid, boolean[][] visited, int newRow, int newCol) {
+		return newRow >= 0 && newRow < grid.length && newCol >= 0 && newCol < grid[0].length
+				&& grid[newRow][newCol] == 1 && !visited[newRow][newCol];
 	}
 }

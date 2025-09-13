@@ -27,7 +27,7 @@ public class Program1 {
 			for (int j = 0; j < list.size(); j++) {
 				if (i != j) {
 					int hours = list.get(i) * 10 + list.get(j);
-					if (hours >= start && end >= hours && time < hours)
+					if (hours >= start && hours<=end && time < hours)
 						time = hours;
 				}
 			}

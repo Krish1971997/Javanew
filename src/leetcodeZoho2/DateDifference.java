@@ -39,8 +39,8 @@ public class DateDifference {
 	}
 
 	public static void main(String[] args) {
-		String dt1 = "2014-02-10";
-		String dt2 = "2015-03-10";
+		String dt1 = "2025-05-25";
+		String dt2 = "2025-04-20";
 		System.out.println("Days between dates: " + daysBetweenDates(dt1, dt2));
 
 		dt1 = "2000-02-10";

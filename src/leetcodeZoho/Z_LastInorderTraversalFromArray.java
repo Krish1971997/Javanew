@@ -1,5 +1,6 @@
 package leetcodeZoho;
 
+//Not touch
 class TreeNode {
 	int val;
 	TreeNode left;
@@ -9,7 +10,7 @@ class TreeNode {
 		val = x;
 	}
 }
-//Not touch
+
 public class Z_LastInorderTraversalFromArray {
 	// Function to construct a binary tree from an array
 	public static TreeNode constructTree(int[] nums, int index) {

@@ -2,7 +2,7 @@ package leetcodeZoho;
 
 public class ZigzagConversion {
 	public static void main(String[] args) {
-		String s1 = "PAYPALISHIRING";
+		String s1 = "100millionusers";
 		int numRows1 = 3;
 		System.out.println("Input: s = \"" + s1 + "\", numRows = " + numRows1);
 		System.out.println("Output: \"" + convert(s1, numRows1) + "\""); // Output: "PAHNAPLSIIGYIR"

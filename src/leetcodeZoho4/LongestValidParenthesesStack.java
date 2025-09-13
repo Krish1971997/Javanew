@@ -11,8 +11,7 @@ public class LongestValidParenthesesStack {
 			if (s.charAt(i) == '(') {
 				stack.push(s.charAt(i));
 			} else {
-				if (s.charAt(i) == ')' && !stack.isEmpty() && 
-						stack.peek() == '(') {
+				if (s.charAt(i) == ')' && !stack.isEmpty() && stack.peek() == '(') {
 					count = count + 2;
 					stack.pop();
 				}

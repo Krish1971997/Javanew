@@ -4,6 +4,7 @@ public class Program1 {
 	public static void main(String[] args) {
 		String input = "mmkdewtr";
 		String word = vowelsCheck(input);
+		System.out.println(word);
 		if (word.length()>0&&isPalindrome(word))
 			System.out.println("True");
 		else

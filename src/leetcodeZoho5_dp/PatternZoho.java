@@ -21,11 +21,11 @@ public class PatternZoho {
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
 
-				if (i == length / 2) {
+				if (i == length / 2) { //mid in row
 					System.out.print(str.charAt(j % str.length()) + " ");
-				} else if (i == j || i + j == length - 1) {
+				} else if (i == j || i + j == length - 1) { // cross
 					System.out.print(str.charAt(i % str.length()) + "  ");
-				} else if (j == length / 2) {
+				} else if (j == length / 2) { //mid in column
 					System.out.print(str.charAt(i % str.length()) + "  ");
 				} else {
 					System.out.print("  ");

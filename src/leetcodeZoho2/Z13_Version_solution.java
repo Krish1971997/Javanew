@@ -25,9 +25,9 @@ public class Z13_Version_solution {
 		int length = max(str1.length, str2.length);
 
 		for (int i = 0; i < length; i++) {
-			//int num1 = stringToInt(i < str1.length ? str1[i] : "0");
+			// int num1 = stringToInt(i < str1.length ? str1[i] : "0");
 			int num1 = i < str1.length ? stringToInt(str1[i]) : 0;
-			//int num2 = stringToInt(i < str2.length ? str2[i] : "0");
+			// int num2 = stringToInt(i < str2.length ? str2[i] : "0");
 			int num2 = i < str2.length ? stringToInt(str2[i]) : 0;
 
 			if (num1 > num2)
@@ -47,6 +47,7 @@ public class Z13_Version_solution {
 
 		for (int i = 0; i < s.length(); i++) {
 			char ch = s.charAt(i);
+
 			if (ch == '.') {
 				if (sb.length() > 0) {
 					words[wordIdx++] = sb.toString();

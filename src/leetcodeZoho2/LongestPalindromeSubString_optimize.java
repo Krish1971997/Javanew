@@ -17,9 +17,9 @@ public class LongestPalindromeSubString_optimize {
 	public String longestPalindrome(String s) {
 		for (int length = s.length(); length > 0; length--) {
 			for (int start = 0; start <= s.length() - length; start++) {
-				System.out.println(s.substring(start, start + length));
+				// System.out.println(s.substring(start, start + length));
 				if (check(start, start + length, s)) {
-					System.out.println("start ->" + start + " end " + (start + length));
+					// System.out.println("start ->" + start + " end " + (start + length));
 					return s.substring(start, start + length);
 				}
 			}

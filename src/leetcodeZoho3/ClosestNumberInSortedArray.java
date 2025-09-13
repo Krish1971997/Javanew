@@ -26,7 +26,7 @@ public class ClosestNumberInSortedArray {
 			if (arr[mid] == target)
 				return arr[mid];
 			if (target < arr[mid])
-				right = mid - 1;
+					right = mid - 1;
 			else
 				left = mid + 1;
 		}
@@ -39,8 +39,8 @@ public class ClosestNumberInSortedArray {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 4, 6, 8, 10, 15 };
-		int target = 9;
+		int[] arr =  { 4, 5, 6, 7, 0, 1, 2 };
+		int target = 4;
 		System.out.println("Closest number to " + target + " is " + findClosest(arr, target)); // Output: 6
 	}
 }

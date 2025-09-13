@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 
 public class LocalDateCheck {
 	public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class LocalDateCheck {
 
         // Parse the formatted string back into a Date object
         Date installationDate = parseDate(currentDateString);
-        System.out.println(installationDate);
+        System.out.println("installationDate : "+installationDate);
 	}
 	private static Date parseDate(String dateStr) {
 		try {

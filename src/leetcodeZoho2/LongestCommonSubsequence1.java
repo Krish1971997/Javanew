@@ -15,10 +15,9 @@ public class LongestCommonSubsequence1 {
 			Arrays.fill(mem[i], -1);
 		}
 
-		System.out.println("Length of Longest Comman sequence is " 
-		+ lcs.find(S1, S2, 0, 0, mem));
+		System.out.println("Length of Longest Comman sequence is " + lcs.find(S1, S2, 0, 0, mem));
 	}
-	
+
 	public int find(String s1, String s2, int i, int j, int[][] mem) {
 		if (i == s1.length() || j == s2.length())
 			return 0;
