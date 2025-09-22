@@ -1,5 +1,5 @@
 package TrainTicketBookingApp;
 
 public enum TrainBookingStatus {
-	Booked,WaitingList
+	Booked,WaitingList,Cancelled
 }

@@ -27,9 +27,13 @@ public class Train {
 	private boolean isTrainWaitingListAvailable = false;
 	private final Queue<Ticket> pnrQueue = new LinkedList<>();
 	private static final List<String> summary = new ArrayList<>();
+	private final boolean[][] seatChart; 
+
 
 	public Train(List<String> stoppages) {
 		this.stoppages = stoppages;
+		seatChart = new boolean[MAX_SEATS][stoppages.size()];
+
 
 		for (int i = 0; i < stoppages.size(); i++) {
 			List<Integer> numOfTickets = new ArrayList<>();
@@ -41,6 +45,7 @@ public class Train {
 	}
 
 	public int getAvailability(String source, String destination) throws InvalidDestinationException {
+		
 		if ((destination.compareTo(source) < 0) || source.equals(destination)) {
 			throw new InvalidDestinationException();
 		}
@@ -74,12 +79,12 @@ public class Train {
 			int currentAvailable = getAvailability(ticketSource, ticketDestination);
 			int avlReservedTickets = MAX_WAITING_SEATS - currentWaitingList;
 
-			if (ticketCount > currentAvailable || ticketCount > avlReservedTickets) {
-				System.out.println("No tickets available");
-				// summary(new Ticket(), "No tickets available", new TreeSet<>());
-				// setEntryType(false);
-				return null;
-			}
+//			if (ticketCount > currentAvailable || (currentAvailable<ticketCount && ticketCount > avlReservedTickets)) {
+//				System.out.println("No tickets available");
+//				// summary(new Ticket(), "No tickets available", new TreeSet<>());
+//				// setEntryType(false);
+//				return null;
+//			}
 
 			if (currentAvailable >= ticketCount) {
 				System.out.println("Ticket booked successfully");
@@ -152,6 +157,10 @@ public class Train {
 		}
 
 		ticket.setNoOfTickets(confirmedSeats - noOfSeats);
+		if(confirmedSeats==noOfSeats) {
+			ticket.setBookstatus(TrainBookingStatus.Cancelled);
+		}
+		
 		// TreeSet<Integer> cancelledSeats = new TreeSet<>();
 		for (int i = 0; i < noOfSeats; i++) {
 			// cancelledSeats.add(seats.remove(confirmedSeats - i - 1));
@@ -284,5 +293,48 @@ public class Train {
 		System.out.println("list --> " + list);
 		return list;
 	}
+	
+//	public List<Integer> seatsAssign(String source, String destination, int numOfTickets) {
+//	    List<Integer> assignedSeats = new ArrayList<>();
+//
+//	    int sourceIndex = stoppages.indexOf(source);
+//	    int destinationIndex = stoppages.indexOf(destination);
+//
+//	    for (int seat = 0; seat < MAX_SEATS && assignedSeats.size() < numOfTickets; seat++) {
+//	        boolean free = true;
+//
+//	        // Check if seat is free for the entire journey
+//	        for (int i = sourceIndex; i < destinationIndex; i++) {
+//	            if (seatChart[seat][i]) {
+//	                free = false;
+//	                break;
+//	            }
+//	        }
+//
+//	        if (free) {
+//	            // Mark seat as booked for this journey
+//	            for (int i = sourceIndex; i < destinationIndex; i++) {
+//	                seatChart[seat][i] = true;
+//	            }
+//	            assignedSeats.add(seat + 1); // seat numbering starts from 1
+//	        }
+//	    }
+//
+//	    return assignedSeats;
+//	}
+//	
+//	public void releaseSeats(String source, String destination, List<Integer> seats) {
+//	    int sourceIndex = stoppages.indexOf(source);
+//	    int destinationIndex = stoppages.indexOf(destination);
+//
+//	    for (int seatNum : seats) {
+//	        int seat = seatNum - 1;
+//	        for (int i = sourceIndex; i < destinationIndex; i++) {
+//	            seatChart[seat][i] = false;
+//	        }
+//	    }
+//	}
+
+
 }
 
