@@ -57,7 +57,7 @@ public class MiniRegexFinder {
 	}
 
 	public static void main(String[] args) {
-		String text1 = "abcbbcabb";
+		String text1 = "abcbcabb";
 		String pattern1 = "cb*cab+";
 		System.out.println(findFirstMatch(text1, pattern1)); // cbbcabb
 
