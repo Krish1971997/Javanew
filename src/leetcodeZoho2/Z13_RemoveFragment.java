@@ -48,7 +48,7 @@ public class Z13_RemoveFragment {
 					sb.append(" ");
 				sb.append(str[i]);
 			}
-			i=i+1;
+			i++;
 		}
 		return sb.toString();
 	}

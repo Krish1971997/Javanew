@@ -4,16 +4,6 @@ import java.util.*;
 
 public class PathInMatrix {
 
-	public static void main(String[] args) {
-		int[][] matrix = { { 0, 3, 2 }, { 3, 0, 0 }, { 1, 3, 3 } };
-
-		if (isPath(matrix)) {
-			System.out.println("Yes");
-		} else {
-			System.out.println("No");
-		}
-	}
-
 	// 2️⃣ Directions (up, down, left, right)
 	public static final int[][] DIRECTIONS = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
@@ -23,6 +13,16 @@ public class PathInMatrix {
 		Cell(int r, int c) {
 			this.row = r;
 			this.col = c;
+		}
+	}
+
+	public static void main(String[] args) {
+		int[][] matrix = { { 0, 3, 2 }, { 3, 0, 0 }, { 1, 3, 3 } };
+
+		if (isPath(matrix)) {
+			System.out.println("Yes");
+		} else {
+			System.out.println("No");
 		}
 	}
 

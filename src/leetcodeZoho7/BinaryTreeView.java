@@ -2,14 +2,14 @@ package leetcodeZoho7;
 
 import java.util.Scanner;
 
-class Node {
-	int data;
-	Node left, right;
-
-	Node(int data) {
-		this.data = data;
-	}
-}
+//class Node {
+//	int data;
+//	Node left, right;
+//
+//	Node(int data) {
+//		this.data = data;
+//	}
+//}
 
 class Tree {
 	Node root;

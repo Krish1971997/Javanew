@@ -10,6 +10,7 @@ Input:((x){3}(y){2}z){2}
 Output: xxxyyzxxxyyz
  */
 
+//need to learn
 public class StringExpander {
 	public static String expandString(String input) {
 		StringBuilder result = new StringBuilder();

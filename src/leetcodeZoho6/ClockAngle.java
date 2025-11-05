@@ -12,10 +12,10 @@ public class ClockAngle {
 		hour = hour % 12;
 
 		System.out.println(hour);
-		double minutes = minute * 6;
+		double minutes = minute * 6;  //360/60 =6 mins
 
 		System.out.println(minutes);
-		double hours = hour * 30 + minute * 0.5;
+		double hours = hour * 30 + minute * 0.5; 
 		System.out.println(hours);
 
 		double diff = Math.abs(minutes - hours);

@@ -10,15 +10,15 @@ public class Program1 {
 	}
 
 	private static String findGreatestTime(String s) {
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> digits = new ArrayList<Integer>();
 		for (int i = 0; i < s.length(); i++) {
 			int ch = s.charAt(i) - '0';
 			if (ch >= 0 && ch <= 9)
-				list.add(ch);
+				digits.add(ch);
 		}
-		int hours = findTime(list, 0, 23, 0);
-		list = removeDigits(hours, list);
-		int minutes = findTime(list, 0, 59, 0);
+		int hours = findTime(digits, 0, 23, 0);
+		digits = removeDigits(hours, digits);
+		int minutes = findTime(digits, 0, 59, 0);
 		return hours+":"+(minutes<9?"0"+minutes:minutes);
 	}
 

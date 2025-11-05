@@ -15,6 +15,7 @@ public class TrappingRainWater {
 		int rightarr[] = new int[len];
 
 		leftarr[0] = arr[0];
+		
 		for (int i = 1; i < leftarr.length; i++) {
 			leftarr[i] = Math.max(leftarr[i - 1], arr[i]);
 		}
@@ -22,9 +23,11 @@ public class TrappingRainWater {
 
 		
 		rightarr[len - 1] = arr[len - 1];
+		
 		for (int i = rightarr.length - 2; i >= 0; i--) {
 			rightarr[i] = Math.max(rightarr[i + 1], arr[i]);
 		}
+		
 		System.out.println(Arrays.toString(rightarr));
 		
 		int total = 0;

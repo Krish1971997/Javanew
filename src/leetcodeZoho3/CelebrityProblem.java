@@ -26,8 +26,8 @@ public class CelebrityProblem {
 	}
 
 	public static void main(String[] args) {
-		int[][] matrix1 = { { 0, 0, 1, 0 }, 
-							{ 0, 0, 1, 0 }, 
+		int[][] matrix1 = { { 0, 1, 1, 1 }, 
+							{ 0, 0, 1, 1 }, 
 							{ 0, 0, 0, 0 }, 
 							{ 0, 0, 1, 0 } };
 

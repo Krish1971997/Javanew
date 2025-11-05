@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Edit_Distance {
 	public static void main(String[] args) {
-		String S1 = "horse";
+		String S1 = "horse";  //Convert S1 = "horse" to S2 = "ros" using minimum operations:
 		String S2 = "ros";
 		int m = S1.length();
 		int n = S2.length();

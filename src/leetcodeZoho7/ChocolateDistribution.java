@@ -2,7 +2,7 @@ package leetcodeZoho7;
 
 import java.util.Arrays;
 //https://www.geeksforgeeks.org/dsa/chocolate-distribution-problem/
-
+//working
 public class ChocolateDistribution {
     public static int findMinDifference(int[] arr, int n, int m) {
         if (m == 0 || n == 0) return 0;

@@ -17,6 +17,7 @@ Output3: The longest beautiful substring is 'aaaaeziiiihouuu'
 Input3: aeeeiiiioooauuuaeiou
 OutB1t3. The longest beautiful substring is 'aeiou'*/
 
+//Need to learn
 public class LongestBeautifulSubstring {
 	public static String longestBeautifulSubstring(String word) {
 		if (word == null || word.length() < 5)

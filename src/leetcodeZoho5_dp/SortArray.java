@@ -17,6 +17,8 @@ public class SortArray {
 			}
 		}
 		
+		System.out.println(Arrays.toString(arr));
+		
 		// sort odd numbers in ascending
 		for (int i = 0; i < j - 1; i++) {
 			for (int k = 1; k < j - i; k++) {

@@ -1,6 +1,6 @@
 package leetcodeZoho6;
 
-//need to learn
+//Working
 public class LeadersInArray {
 
     public static void printLeaders(int[] arr) {
