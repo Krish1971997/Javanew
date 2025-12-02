@@ -25,7 +25,6 @@ public class IntervalRemoval {
 				return o1[1]-o2[1];
 			}
 		});
-		
 
 		int count = 0;
 		int end = intervals[0][1];

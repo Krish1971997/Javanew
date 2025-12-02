@@ -23,7 +23,8 @@ public class MiniRegexFinder {
 			char pc = pattern.charAt(pattern_idx);
 
 			// Check if next char in pattern is * or +
-			if (pattern_idx + 1 < pattern.length() && (pattern.charAt(pattern_idx + 1) == '*' || pattern.charAt(pattern_idx + 1) == '+')) {
+			if (pattern_idx + 1 < pattern.length() && (pattern.charAt(pattern_idx + 1) == '*' 
+					|| pattern.charAt(pattern_idx + 1) == '+')) {
 				char op = pattern.charAt(pattern_idx + 1);
 
 				if (op == '+' && ((text_idx >= text.length() || text.charAt(text_idx) != pc)))

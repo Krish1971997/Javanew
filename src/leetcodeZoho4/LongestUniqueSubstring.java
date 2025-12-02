@@ -14,7 +14,7 @@ public class LongestUniqueSubstring {
 			char currentChar = s.charAt(right);
 
 			while (uniqueChars.contains(currentChar)) {
-				uniqueChars.remove(s.charAt(left));
+				uniqueChars.remove(currentChar);
 				left++;
 			}
 

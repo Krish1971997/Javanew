@@ -18,13 +18,13 @@ public class LongestIncreasingPath {
 
 		rows = matrix.length;
 		cols = matrix[0].length;
-		int[][] dp = new int[rows][cols];
+		int[][] mem = new int[rows][cols];
 		int max = 0;
 
 		// Start DFS from every cell
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
-				max = Math.max(max, dfs(matrix, i, j, dp));
+				max = Math.max(max, dfs(matrix, i, j, mem));
 			}
 		}
 		//System.out.println("Test");
@@ -32,9 +32,9 @@ public class LongestIncreasingPath {
 		return max;
 	}
 
-	private int dfs(int[][] matrix, int row, int col, int[][] dp) {
-		if (dp[row][col] != 0)
-			return dp[row][col];
+	private int dfs(int[][] matrix, int row, int col, int[][] mem) {
+		if (mem[row][col] != 0)
+			return mem[row][col];
 
 		int max = 1;
 
@@ -43,11 +43,11 @@ public class LongestIncreasingPath {
 			int newCol = col + dir[1];
 
 			if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && matrix[newRow][newCol] > matrix[row][col]) {
-				max = Math.max(max, 1 + dfs(matrix, newRow, newCol, dp));
+				max = Math.max(max, 1 + dfs(matrix, newRow, newCol, mem));
 			}
 		}
 
-		dp[row][col] = max;
+		mem[row][col] = max;
 		return max;
 	}
 }

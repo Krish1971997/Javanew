@@ -17,7 +17,7 @@ public class PathInMatrix {
 	}
 
 	public static void main(String[] args) {
-		int[][] matrix = { { 0, 3, 2 }, { 3, 0, 0 }, { 1, 3, 3 } };
+		int[][] matrix = { { 3, 3, 2 }, { 3, 0, 0 }, { 1, 3, 3 } };
 
 		if (isPath(matrix)) {
 			System.out.println("Yes");

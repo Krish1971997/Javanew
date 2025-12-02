@@ -28,12 +28,12 @@ public class HouseRobberIV {
 		return ans;
 	}
 
-	private static boolean canRob(int[] nums, int k, int maxVal) {
+	private static boolean canRob(int[] nums, int k, int mid) {
 		int count = 0;
 		int i = 0;
 
 		while (i < nums.length) {
-			if (nums[i] <= maxVal) {
+			if (nums[i] <= mid) {
 				count++;
 				i += 2; // skip next house (no two adjacent)
 			} else {

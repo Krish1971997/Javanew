@@ -23,5 +23,10 @@ public class ClockAngle {
 
 		return Math.min(diff, 360 - diff);
 	}
+	
+//முக்கியம்: 1 minute move ஆவதற்கு hour hand 0.5 degrees move ஆகும்.ஏன்?
+//1 hour = 30°
+//அதாவது 60 minutes = 30°
+//அப்படின்னா 1 minute = 30 / 60 = 0.5°
 
 }

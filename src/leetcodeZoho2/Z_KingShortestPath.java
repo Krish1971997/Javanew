@@ -15,6 +15,19 @@ public class Z_KingShortestPath {
 	        int shortestPathLength = findShortestPath(startX, startY, endX, endY);
 	        System.out.println("The shortest path length is: " + shortestPathLength);
 	    }
+	    
+	 // King moves – 8 directions
+	    private static final int[][] KING_MOVES = {
+	        {-1, -1}, // top-left
+	        {-1,  0}, // top
+	        {-1,  1}, // top-right
+	        { 0, -1}, // left
+	        { 0,  1}, // right
+	        { 1, -1}, // bottom-left
+	        { 1,  0}, // bottom
+	        { 1,  1}  // bottom-right
+	    };
+
 
 	    private static int findShortestPath(int startX, int startY, int endX, int endY) {
 	        boolean[][] visited = new boolean[8][8];

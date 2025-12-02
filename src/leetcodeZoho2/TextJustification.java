@@ -14,9 +14,8 @@ public class TextJustification {
 	 * spacesToAdd; i++) { int setint = i % (cur.size() - 1); String setString =
 	 * cur.get(setint); cur.set(setint, setString + " "); }
 	 * result.add(String.join("", cur)); cur.clear(); numOfLetters = 0; }
-	 * cur.add(word); numOfLetters += word.length(); } result.add(String.join(" ",
-	 * cur) + " ".repeat(maxWidth - numOfLetters - cur.size() + 1));
-	 * 
+	 * cur.add(word); numOfLetters += word.length(); } 
+	 * result.add(String.join(" ",cur) + " ".repeat(maxWidth - numOfLetters - cur.size() + 1));
 	 * return result; }
 	 */
 
@@ -42,7 +41,8 @@ public class TextJustification {
 				int spacesToAdd = maxWidth - numOfLetters;
 
 				for (int i = 0; i < spacesToAdd; i++) {
-					int setIndex = i % (cur.size() > 1 ? (cur.size() - 1) : 1);
+					int size=cur.size() > 1 ? (cur.size() - 1) : 1;
+					int setIndex = i % size;
 					cur.set(setIndex, cur.get(setIndex) + " ");
 				}
 				result.add(buildLine(cur));

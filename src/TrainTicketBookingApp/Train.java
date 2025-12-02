@@ -27,12 +27,12 @@ public class Train {
 	private boolean isTrainWaitingListAvailable = false;
 	private final Queue<Ticket> pnrQueue = new LinkedList<>();
 	private static final List<String> summary = new ArrayList<>();
-	private final boolean[][] seatChart; 
+//	private final boolean[][] seatChart; 
 
 
 	public Train(List<String> stoppages) {
 		this.stoppages = stoppages;
-		seatChart = new boolean[MAX_SEATS][stoppages.size()];
+		//seatChart = new boolean[MAX_SEATS][stoppages.size()];
 
 
 		for (int i = 0; i < stoppages.size(); i++) {
@@ -79,12 +79,12 @@ public class Train {
 			int currentAvailable = getAvailability(ticketSource, ticketDestination);
 			int avlReservedTickets = MAX_WAITING_SEATS - currentWaitingList;
 
-//			if (ticketCount > currentAvailable || (currentAvailable<ticketCount && ticketCount > avlReservedTickets)) {
-//				System.out.println("No tickets available");
-//				// summary(new Ticket(), "No tickets available", new TreeSet<>());
-//				// setEntryType(false);
-//				return null;
-//			}
+			if (ticketCount > currentAvailable || (ticketCount>currentAvailable && ticketCount > avlReservedTickets)) {
+				System.out.println("No tickets available");
+				// summary(new Ticket(), "No tickets available", new TreeSet<>());
+				// setEntryType(false);
+				return null;
+			}
 
 			if (currentAvailable >= ticketCount) {
 				System.out.println("Ticket booked successfully");
