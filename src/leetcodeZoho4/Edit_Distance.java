@@ -39,5 +39,4 @@ public class Edit_Distance {
 		}
 		return mem[i][j];
 	}
-
 }

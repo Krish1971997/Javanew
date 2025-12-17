@@ -37,7 +37,7 @@ public class Z13_RemovePalindromes {
 			if (ch == ' ' && sb.length() > 0) {
 				if (!isPalindrome(sb.toString()))
 					res.append(sb.toString()).append(" ");
-				sb = new StringBuilder();
+				sb.setLength(0);
 			} else
 				sb.append(ch);
 		}

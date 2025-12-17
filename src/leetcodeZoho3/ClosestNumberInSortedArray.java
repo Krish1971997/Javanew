@@ -10,15 +10,15 @@ public class ClosestNumberInSortedArray {
 
 		int left = 0, right = arr.length - 1;
 
-		if (target <= arr[left]) {
-			//System.out.println("line 13");
-			return arr[left];
-		}
-
-		if (target >= arr[right]) {
-			//System.out.println("line 18");
-			return arr[right];
-		}
+//		if (target <= arr[left]) {
+//			System.out.println("line 13");
+//			return arr[left];
+//		}
+//
+//		if (target >= arr[right]) {
+//			System.out.println("line 18");
+//			return arr[right];
+//		}
 
 		while (left <= right) {
 			int mid = (left + right) / 2;
