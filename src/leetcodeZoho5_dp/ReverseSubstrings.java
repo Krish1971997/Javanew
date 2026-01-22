@@ -7,7 +7,7 @@ public class ReverseSubstrings {
 
         for (char c : s.toCharArray()) {
             if (c != ')') {
-                stack[++top] = c;
+                stack[++top] = c; 
             } else {
                 StringBuilder temp = new StringBuilder();
                 

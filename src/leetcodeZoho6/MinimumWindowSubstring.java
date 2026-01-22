@@ -15,13 +15,13 @@ public class MinimumWindowSubstring {
 		System.out.println("Minimum window substring is: \"" + result + "\"");
 	}
 
-	public String minWindow(String s, String t) {
-		if (s == null || t == null || s.length() < t.length())
+	public String minWindow(String str, String target) {
+		if (str == null || target == null || str.length() < target.length())
 			return "";
 
 		// Build frequency map for t
 		Map<Character, Integer> need = new HashMap<>();
-		for (char c : t.toCharArray()) {
+		for (char c : target.toCharArray()) {
 			need.put(c, need.getOrDefault(c, 0) + 1);
 		}
 
@@ -33,8 +33,8 @@ public class MinimumWindowSubstring {
 		int minLen = Integer.MAX_VALUE;
 		int minLeft = 0;
 
-		while (right < s.length()) {
-			char c = s.charAt(right);
+		while (right < str.length()) {
+			char c = str.charAt(right);
 			windowCounts.put(c, windowCounts.getOrDefault(c, 0) + 1);
 
 			if (need.containsKey(c) && windowCounts.get(c).intValue() == need.get(c).intValue()) {
@@ -48,7 +48,7 @@ public class MinimumWindowSubstring {
 					minLeft = left;
 				}
 
-				char leftChar = s.charAt(left);
+				char leftChar = str.charAt(left);
 				windowCounts.put(leftChar, windowCounts.get(leftChar) - 1);
 				if (need.containsKey(leftChar)
 						&& windowCounts.get(leftChar).intValue() < need.get(leftChar).intValue()) {
@@ -61,6 +61,6 @@ public class MinimumWindowSubstring {
 			right++;
 		}
 
-		return minLen == Integer.MAX_VALUE ? "" : s.substring(minLeft, minLeft + minLen);
+		return minLen == Integer.MAX_VALUE ? "" : str.substring(minLeft, minLeft + minLen);
 	}
 }
