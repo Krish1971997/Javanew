@@ -13,7 +13,6 @@ public class Edit_Distance {
 		for (int i = 0; i < mem.length; i++) {
 			Arrays.fill(mem[i], -1);
 		}
-
 		System.out.println("Max insertation and deletion " + find(S1, S2, 0, 0, mem));
 	}
 	
