@@ -30,7 +30,7 @@ public class LetterCombinations {
 	}
 
 	public static void main(String[] args) {
-		String digits = "23";
+		String digits = "9";
 		List<String> combinations = letterCombinations(digits);
 		System.out.println("Letter Combinations: " + combinations);
 	}

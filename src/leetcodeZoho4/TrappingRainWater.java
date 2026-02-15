@@ -38,5 +38,4 @@ public class TrappingRainWater {
 		}
 		return total;
 	}
-
 }

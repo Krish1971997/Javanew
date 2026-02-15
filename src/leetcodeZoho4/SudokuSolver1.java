@@ -1,9 +1,10 @@
 package leetcodeZoho4;
+
 //working
 public class SudokuSolver1 {
 
 	private static final int SIZE = 9;
-	
+
 	public void solveSudoku(int[][] board) {
 		solve(board);
 	}
@@ -42,16 +43,9 @@ public class SudokuSolver1 {
 
 	public static void main(String[] args) {
 		SudokuSolver1 solver = new SudokuSolver1();
-		int[][] board = { 
-				{ 5, 9, 0, 3, 0, 0, 8, 7, 2 },
-				{ 1, 8, 6, 4, 0, 2, 9, 5, 3 },
-				{ 7, 3, 2, 0, 0, 0, 0, 0, 1 },
-				{ 2, 1, 0, 6, 0, 7, 3, 0, 0 },
-				{ 6, 0, 0, 5, 4, 0, 1, 0, 0 },
-				{ 0, 4, 9, 2, 0, 0, 0, 6, 5 },
-				{ 3, 6, 8, 9, 0, 5, 4, 1, 0 },
-				{ 0, 5, 1, 0, 6, 4, 2, 3, 8 },
-				{ 4, 2, 0, 0, 0, 3, 5, 9, 0 }};
+		int[][] board = { { 5, 9, 0, 3, 0, 0, 8, 7, 2 }, { 1, 8, 6, 4, 0, 2, 9, 5, 3 }, { 7, 3, 2, 0, 0, 0, 0, 0, 1 },
+				{ 2, 1, 0, 6, 0, 7, 3, 0, 0 }, { 6, 0, 0, 5, 4, 0, 1, 0, 0 }, { 0, 4, 9, 2, 0, 0, 0, 6, 5 },
+				{ 3, 6, 8, 9, 0, 5, 4, 1, 0 }, { 0, 5, 1, 0, 6, 4, 2, 3, 8 }, { 4, 2, 0, 0, 0, 3, 5, 9, 0 } };
 		solver.solveSudoku(board);
 
 		for (int[] row : board) {
