@@ -17,7 +17,8 @@ public class Z_KingShortestPath {
 	}
 
 	// King moves – 8 directions
-	private static final int[][] KING_MOVES = { { -1, -1 }, // top-left
+	private static final int[][] KING_MOVES = { 
+			{ -1, -1 }, // top-left
 			{ -1, 0 }, // top
 			{ -1, 1 }, // top-right
 			{ 0, -1 }, // left

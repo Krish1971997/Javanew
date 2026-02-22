@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class MinimumPathSum {
 	public static void main(String[] args) {
-		int[][] arr = { { 1, 3, 1 }, { 1, 5, 1 }, { 4, 2, 1 } };
+		int[][] arr = { { 1, 3, 1 }, 
+						{ 1, 5, 1 }, 
+						{ 4, 2, 1 } };
 		int[][] mem = new int[arr.length][arr[0].length];
 		for (int i = 0; i < mem.length; i++) {
 			Arrays.fill(mem[i], -1);

@@ -59,8 +59,8 @@ public class DateDifferenceManual {
 
 		// If month of from-date is greater, borrow from year
 		if (m1 > m2) {
-			m2 += 12;
-			y2 -= 1;
+			m2 += 12; //twelve
+ 			y2 -= 1;
 		}
 
 		int finalDay = d2 - d1;

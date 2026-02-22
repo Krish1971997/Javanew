@@ -33,29 +33,29 @@ public class TextJustification {
 
 	public static List<String> fullJustify(String[] words, int maxWidth) {
 		List<String> result = new ArrayList<>();
-		List<String> cur = new ArrayList<>();
+		List<String> current = new ArrayList<>();
 		int numOfLetters = 0;
 
 		for (String word : words) {
-			if (numOfLetters + word.length() + cur.size() > maxWidth) {
+			if (numOfLetters + word.length() + current.size() > maxWidth) {
 				int spacesToAdd = maxWidth - numOfLetters;
 
 				for (int i = 0; i < spacesToAdd; i++) {
-					int size=cur.size() > 1 ? (cur.size() - 1) : 1;
+					int size=current.size() > 1 ? (current.size() - 1) : 1;
 					int setIndex = i % size;
-					cur.set(setIndex, cur.get(setIndex) + " ");
+					current.set(setIndex, current.get(setIndex) + " ");
 				}
-				result.add(buildLine(cur));
+				result.add(buildLine(current));
 				//result.add(join("", cur));
 				//String.join("", words);
 				
-				cur.clear();
+				current.clear();
 				numOfLetters = 0;
 			}
-			cur.add(word);
+			current.add(word);
 			numOfLetters += word.length();
 		}
-		result.add(buildLastLine(cur, maxWidth));
+		result.add(buildLastLine(current, maxWidth));
 
 		return result;
 	}

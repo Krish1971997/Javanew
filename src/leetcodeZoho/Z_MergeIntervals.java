@@ -11,45 +11,42 @@ import java.util.List;
  */
 public class Z_MergeIntervals {
 	public static void main(String[] args) {
-		int[][] arr = { { 1, 3 }, { 12, 13 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
+		int[][] arr =  {{1,3},{2,6},{8,10},{15,18}};
 		int[][] arr1 = mergeIntervals(arr);
 		for (int[] interval : arr1) {
 			System.out.println(Arrays.toString(interval));
 		}
 	}
 
-	private static int[][] mergeIntervals(int[][] arr) {
-		List<int[]> merged = new ArrayList<>();
-		Arrays.sort(arr,Comparator.comparingInt(ar -> ar[0]));
-		//Arrays.sort(arr,(o1,o2)->o1[0] - o2[0]);
-//		Arrays.sort(arr,new Comparator<int[]>() {
-//
-//			@Override
-//			public int compare(int[] o1, int[] o2) {
-//				return o1[0]-o2[0];
-//			}
-//			
-//		});
-		
-	/*	for (int[] is : arr) {
-			if (is[0] < current[1]) {
-				current[1] = Math.max(is[1], current[1]);
-			} else {
-				merged.add(current);
-				current = is;
+	private static int[][] mergeIntervals(int[][] intervals) {
+	//	Arrays.sort(intervals,Comparator.comparingInt(ar -> ar[0]));
+		Arrays.sort(intervals,new Comparator<int[]>() {
+
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				return o1[0]-o2[0];
 			}
-		} */
-		
-		int current[] = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i][0] > current[1]) {
-//				current[1] = Math.max(arr[i][0], current[1]);
-//			} else {
-				merged.add(current);
-				current = arr[i];
-			}
-		}
-		merged.add(current);
-		return merged.toArray(new int[merged.size()][]);
+			
+		}); 
+	
+		List<int[]> result = new ArrayList<>();
+
+        int[] current = intervals[0];
+        result.add(current);
+
+        for (int i = 1; i < intervals.length; i++) {
+
+            if (intervals[i][0] <= current[1]) {
+                // Overlapping → merge
+                current[1] = Math.max(current[1], intervals[i][1]);
+            } else {
+                // No overlap
+                current = intervals[i];
+                result.add(current);
+            }
+        }
+
+        return result.toArray(new int[result.size()][]);
+	
 	}
 }

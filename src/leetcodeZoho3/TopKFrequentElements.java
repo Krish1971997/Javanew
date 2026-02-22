@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TopKFrequentElements {
 	public static void main(String[] args) {
-		int[] nums1 = { 1, 1, 1, 2, 2, 3 };
+		int[] nums1 = { 1, 1, 1, 2, 2, 3, 3, 3 };
 		int k1 = 2;
 		System.out.println(topKFrequent(nums1, k1)); // Output: [1, 2]
 

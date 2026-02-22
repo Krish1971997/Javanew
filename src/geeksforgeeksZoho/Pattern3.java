@@ -11,7 +11,7 @@ public class Pattern3 {
 				break;
 			}
 		}
-
+ 
 		int length = Math.max(mid, str.length() - mid);
 
 		for (int i = 0; i < length; i++) {

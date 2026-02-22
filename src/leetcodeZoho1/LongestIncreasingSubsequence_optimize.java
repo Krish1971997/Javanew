@@ -2,7 +2,7 @@ package leetcodeZoho1;
 
 public class LongestIncreasingSubsequence_optimize {
 
-	static int maxsum;
+	//static int maxsum;
 
 	public static void main(String[] args) {
 		int[] nums = { 1, 5, 3, 7 };

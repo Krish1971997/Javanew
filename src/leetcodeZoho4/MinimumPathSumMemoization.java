@@ -10,6 +10,7 @@ public class MinimumPathSumMemoization {
             Arrays.asList(2, 5, 7),
             Arrays.asList(4, 1, 8, 3)
         );
+        
 
         int minSum = minimumTotal(triangle);
         System.out.println("Minimum path sum: " + minSum);

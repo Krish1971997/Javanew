@@ -2,8 +2,11 @@ package leetcodeZoho6;
 
 public class CountServersThatCommunicate {
 	public static void main(String[] args) {
-		int[][] grid = { { 1, 1, 0, 0},{0,0,1,0},{0,0,1,0},{0,0,0,1} };
-		System.out.println(countServers(grid)); // Expected output: 3
+		int[][] grid = { { 1, 1, 0, 0 }, 
+						 { 0, 0, 1, 0 }, 
+						 { 0, 0, 1, 0 }, 
+						 { 0, 0, 0, 1 } };
+		System.out.println(countServers(grid)); // Expected output: 4
 	}
 
 	public static int countServers(int[][] grid) {

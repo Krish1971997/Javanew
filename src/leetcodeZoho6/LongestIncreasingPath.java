@@ -5,7 +5,9 @@ public class LongestIncreasingPath {
 	private static int rows, cols;
 
 	public static void main(String[] args) {
-		int[][] matrix = { { 9, 9, 4 }, { 6, 6, 8 }, { 2, 1, 1 } };
+		int[][] matrix = { { 9, 9, 4 }, 
+						   { 6, 6, 8 }, 
+						   { 2, 1, 1 } };
 
 		LongestIncreasingPath lip = new LongestIncreasingPath();
 		int result = lip.longestIncreasingPath(matrix);
@@ -27,7 +29,7 @@ public class LongestIncreasingPath {
 				max = Math.max(max, dfs(matrix, i, j, mem));
 			}
 		}
-		//System.out.println("Test");
+		// System.out.println("Test");
 
 		return max;
 	}
@@ -42,12 +44,17 @@ public class LongestIncreasingPath {
 			int newRow = row + dir[0];
 			int newCol = col + dir[1];
 
-			if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && matrix[newRow][newCol] > matrix[row][col]) {
+			if (isValid(matrix, row, col, newRow, newCol)) {
 				max = Math.max(max, 1 + dfs(matrix, newRow, newCol, mem));
 			}
 		}
 
 		mem[row][col] = max;
 		return max;
+	}
+
+	private boolean isValid(int[][] matrix, int row, int col, int newRow, int newCol) {
+		return newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols
+				&& matrix[newRow][newCol] > matrix[row][col];
 	}
 }

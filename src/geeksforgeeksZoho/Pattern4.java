@@ -7,23 +7,23 @@ public class Pattern4 {
 	}
 
 	private static void printNumberTriangle(int rows) {
-		for (int i = 1; i <= rows; i++) {
+		for (int i = 0; i < rows; i++) {
 			// Print spaces for alignment
-			for (int j = 1; j <= rows - i; j++) {
+			for (int j = 1; j < rows - i; j++) {
 				System.out.print("  ");
 			}
 
 			// Print increasing numbers
 			int num = i;
-			for (int k = 1; k <= i; k++) {
-				System.out.print(num + " ");
-				num++;
+			for (int k = 0; k <= i; k++) {
+				System.out.print(++num + " ");
+				//num++;
 			}
 			// Print decreasing numbers
-			num = num- 2;
-			for (int l = 1; l <= i - 1; l++) {
-				System.out.print(num + " ");
-				num--;
+			//num = num- 2;
+			for (int l = 0; l < i; l++) {
+				System.out.print(--num + " ");
+//				num--;
 			}
 
 			// Move to the next line for the next row

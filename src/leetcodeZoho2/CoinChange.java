@@ -9,11 +9,13 @@ public class CoinChange {
 
 		dp[0] = 0;
 
-		for (int coin : coins) {
-			for (int j = coin; j <= amount; j++) {
-				dp[j] = Math.min(dp[j], dp[j - coin] + 1);
-			}
-		}
+		for (int i = 1; i <= amount; i++) {
+            for (int coin : coins) {
+                if (i - coin >= 0) {
+                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                }
+            }
+        }
 		// If dp[amount] is still amount + 1, it means the amount cannot be formed
 		return dp[amount] > amount ? -1 : dp[amount];
 	}

@@ -13,43 +13,36 @@ public class MiniRegexFinder {
 	}
 
 	private static String tryMatch(String text, String pattern, int start) {
-		int ti = start, pi = 0;
+		int text_idx = start, pattern_idx = 0;
 		StringBuilder sb = new StringBuilder();
 
-		while (pi < pattern.length()) {
-			if (ti >= text.length())
+		while (pattern_idx < pattern.length()) {
+			if (text_idx >= text.length())
 				return null;
 
-			char pc = pattern.charAt(pi);
+			char pc = pattern.charAt(pattern_idx);
 
 			// Check if next char in pattern is * or +
-			if (pi + 1 < pattern.length() && (pattern.charAt(pi + 1) == '*' || pattern.charAt(pi + 1) == '+')) {
-				char op = pattern.charAt(pi + 1);
+			if (pattern_idx + 1 < pattern.length() && (pattern.charAt(pattern_idx + 1) == '*' 
+					|| pattern.charAt(pattern_idx + 1) == '+')) {
+				char op = pattern.charAt(pattern_idx + 1);
 
-				if (op == '*') {
-					// zero or more occurrences
-					while (ti < text.length() && text.charAt(ti) == pc) {
-						sb.append(text.charAt(ti));
-						ti++;
-					}
-					pi += 2; // skip char and '*'
-				} else { // '+'
-					// must match at least once
-					if (ti >= text.length() || text.charAt(ti) != pc)
-						return null;
-					while (ti < text.length() && text.charAt(ti) == pc) {
-						sb.append(text.charAt(ti));
-						ti++;
-					}
-					pi += 2; // skip char and '+'
+				if (op == '+' && ((text_idx >= text.length() || text.charAt(text_idx) != pc)))
+					return null; //must match at least once
+				
+				while (text_idx < text.length() && text.charAt(text_idx) == pc) {
+					sb.append(text.charAt(text_idx));
+					text_idx++;
 				}
+				pattern_idx += 2; // skip char and '+'
+
 			} else {
 				// exact match
-				if (text.charAt(ti) != pc)
+				if (text.charAt(text_idx) != pc)
 					return null;
-				sb.append(text.charAt(ti));
-				ti++;
-				pi++;
+				sb.append(text.charAt(text_idx));
+				text_idx++;
+				pattern_idx++;
 			}
 		}
 
@@ -57,12 +50,12 @@ public class MiniRegexFinder {
 	}
 
 	public static void main(String[] args) {
-		String text1 = "abcbcabb";
-		String pattern1 = "cb*cab+";
+		String text1 = "abcbbcabb"; // abcbbcabb
+		String pattern1 = "cb*cab+"; // cb*cab+
 		System.out.println(findFirstMatch(text1, pattern1)); // cbbcabb
 
-		String text2 = "abcfbbbacbk";
-		String pattern2 = "bbk*ac+";
+		String text2 = "abcfbbbacbk"; // abcfbbbacbk
+		String pattern2 = "bbk*ac+"; // bbk*ac+
 		System.out.println(findFirstMatch(text2, pattern2)); // bbac
 	}
 }

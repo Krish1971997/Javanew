@@ -3,11 +3,11 @@ package leetcodeZoho4;
 public class LongestRepeatingCharacterReplacement {
 
 	public static void main(String[] args) {
-		String s1 = "ABBA";
-		int k1 = 2;
+		String s1 = "ABBA"; //ABBA -> can replace AAAA or BBBB -> 4 
+		int k1 = 2; //how many letters can replace and find max substring 
 		System.out.println("Longest substring length: " + characterReplacement(s1, k1)); // Output: 4
 
-		String s2 = "ADBD";
+		String s2 = "ADBD"; //DBD -> DDD ->3
 		int k2 = 1;
 		System.out.println("Longest substring length: " + characterReplacement(s2, k2)); // Output: 3
 	}

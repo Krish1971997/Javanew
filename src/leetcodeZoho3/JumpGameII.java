@@ -1,29 +1,30 @@
 package leetcodeZoho3;
 
+//https://www.youtube.com/watch?v=9kyHYVxL4fw
 public class JumpGameII {
     public int jump(int[] nums) {
         if (nums == null || nums.length < 2) {
             return 0;
         }
 
-        int jumps = 0;      
-        int currentEnd = 0; 
-        int furthest = 0;   
+        int totalJumps = 0;      
+        int lastJumpIndex = 0; 
+        int coverage = 0;   
  
-        for (int i = 0; i < nums.length - 1; i++) {
-        	furthest = Math.max(furthest, i + nums[i]); // Update furthest point reachable
+        for (int i = 0; i < nums.length ; i++) {
+        	coverage = Math.max(coverage, i + nums[i]); // Update furthest point reachable
 
-            if (i == currentEnd) { // If we've reached the end of the current jump range
-                jumps++;           // Increment jump count
-                currentEnd = furthest; // Update the current range to the furthest point
+            if (i == lastJumpIndex) { // If we've reached the end of the current jump range
+                totalJumps++;           // Increment jump count
+                lastJumpIndex = coverage; // Update the current range to the furthest point
 
-                if (currentEnd >= nums.length - 1) { // If we can reach the last index
+                if (lastJumpIndex >= nums.length - 1) { // If we can reach the last index
                     break;
                 }
             }
         }
 
-        return jumps;
+        return totalJumps;
     }
 
     public static void main(String[] args) {

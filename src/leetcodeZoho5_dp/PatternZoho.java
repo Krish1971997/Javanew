@@ -24,7 +24,7 @@ public class PatternZoho {
 				if (i == length / 2) { //mid in row
 					System.out.print(str.charAt(j % str.length()) + " ");
 				} else if (i == j || i + j == length - 1) { // cross
-					System.out.print(str.charAt(i % str.length()) + "  ");
+					System.out.print(str.charAt(i % str.length()) + " ");
 				} else if (j == length / 2) { //mid in column
 					System.out.print(str.charAt(i % str.length()) + "  ");
 				} else {
@@ -33,7 +33,5 @@ public class PatternZoho {
 			}
 			System.out.println();
 		}
-
 	}
-
 }

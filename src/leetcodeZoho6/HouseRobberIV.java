@@ -12,32 +12,33 @@ public class HouseRobberIV {
 	}
 
 	public static int minCapability(int[] nums, int k) {
-		int left = 1, right = 1000000000, ans = -1;
+		int left = 1;
+		int right = 1000000000; // max possible value
 
-		while (left <= right) {
-			int mid = (left + right) / 2;
+		while (left < right) {
+			int mid = left + (right - left) / 2;
 
 			if (canRob(nums, k, mid)) {
-				ans = mid;
-				right = mid - 1;
+				right = mid; // mid-ஐ குறைக்க பாக்கலாம்
 			} else {
-				left = mid + 1;
+				left = mid + 1; // mid போதாது, அதிகப்படுத்தணும்
 			}
 		}
 
-		return ans;
+		return left;
 	}
 
-	private static boolean canRob(int[] nums, int k, int mid) {
+	// capability-க்கு உள்ளே k வீடுகளை rob பண்ண முடியுமா?
+	private static boolean canRob(int[] nums, int k, int capability) {
 		int count = 0;
 		int i = 0;
 
 		while (i < nums.length) {
-			if (nums[i] <= mid) {
-				count++;
-				i += 2; // skip next house (no two adjacent)
+			if (nums[i] <= capability) {
+				count++; // இந்த வீட்டை rob பண்ணலாம்
+				i += 2; // adjacent skip பண்ணு
 			} else {
-				i++;
+				i++; // இந்த வீடு capability-ஐ தாண்டுது, skip
 			}
 		}
 

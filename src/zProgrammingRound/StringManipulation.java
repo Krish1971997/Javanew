@@ -13,6 +13,37 @@ public class StringManipulation {
 	}
 
 	private static String findOutput(String input, String pattern) {
+
+	    StringBuilder output = new StringBuilder();
+	    int i = 0;
+	    int patternLength = pattern.length();
+	    while (i <= input.length() - patternLength) {
+	        if (input.substring(i, i + patternLength).equals(pattern)) {
+	            output.append("X");
+	            
+	            i += patternLength;
+	            
+	            // Skip all continuous pattern matches
+	            while (i <= input.length() - patternLength &&
+	                   input.substring(i, i + patternLength).equals(pattern)) {
+	                i += patternLength;
+	            }
+
+	        } else {
+	            output.append(input.charAt(i));
+	            i++;
+	        }
+	    }
+
+	    // Append remaining characters
+	    while (i < input.length()) {
+	        output.append(input.charAt(i));
+	        i++;
+	    }
+	    return output.toString();
+	}
+	
+	/*private static String findOutput(String input, String pattern) {
 		StringBuilder output = new StringBuilder();
 		int previousIndex = -1;
 		int patternLength = pattern.length();
@@ -34,5 +65,5 @@ public class StringManipulation {
 		}
 
 		return output.toString();
-	}
+	} */
 }

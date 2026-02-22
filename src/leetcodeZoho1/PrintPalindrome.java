@@ -44,14 +44,15 @@ public class PrintPalindrome {
 		
 		for (int i = index; i < s.length(); i++) {
 			String sub=s.substring(index, i+1);
-			System.out.println(sub);
+			if(check(sub))
+				System.out.println(sub);
 		}	
 		find(s, index+1);
 	}
 	
 	static boolean check(String sub) {
 		int start=0;
-		int end=sub.length();
+		int end=sub.length()-1;
 		while(start<end) {
 			if(sub.charAt(start)!=sub.charAt(end))
 				return false;

@@ -7,16 +7,16 @@ import java.util.Scanner;
 public class Program2 {
 	public static void main(String[] args) {
 		// int[] arr= {1,1,2,3,4};
-		// int[] arr = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+		 int[] arr = { 1, 2, 2, 5,5,3, 3, 3, 4, 4, 4, 4 };
 
-		Scanner sc = new Scanner(System.in);
+/*		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the length of the array:");
 		int length = sc.nextInt();
 		int[] arr = new int[length];
 		System.out.println("Enter the " + length + " numbers");
 		for (int i = 0; i < length; i++) {
 			arr[i] = sc.nextInt();
-		}
+		} */
 
 		Map<Integer, Integer> frequency = new HashMap<>();
 		for (int i = 0; i < arr.length; i++) {

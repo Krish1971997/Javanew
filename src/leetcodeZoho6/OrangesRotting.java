@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class OrangesRotting {
 	public static void main(String[] args) {
-		int[][] grid = { { 0,2 }};
+		int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
 		System.out.println(findMinNoOfMinutes(grid));
 	}
 
@@ -20,7 +20,7 @@ public class OrangesRotting {
 			for (int j = 0; j < col; j++) {
 				if (grid[i][j] == 2) {
 					queue.offer(new int[] { i, j });
-				} else if(grid[i][j]==1)
+				} else if (grid[i][j] == 1)
 					freshOranges++;
 			}
 		}

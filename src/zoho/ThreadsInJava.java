@@ -39,6 +39,7 @@ public class ThreadsInJava {
 				}
 			}
 		};
+		
 		t1.start();
 		t2.start();
 	}
