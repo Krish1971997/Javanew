@@ -19,7 +19,7 @@ public class TicTacToe {
 			}
 		}
 	}
-
+	
 	private void printBoard() {
 		System.out.println("-------------");
 		for (int i = 0; i < 3; i++) {
