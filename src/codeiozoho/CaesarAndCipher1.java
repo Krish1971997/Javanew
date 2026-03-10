@@ -1,5 +1,6 @@
 package codeiozoho;
 
+//duplicate class
 public class CaesarAndCipher1 {
 	public static void main(String[] args) {
 		String s = "AYZayz";
