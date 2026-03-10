@@ -4,6 +4,7 @@ public class ReciprocalString {
 	public static void main(String[] args) {
 		String s = "AbxhM89";
 		StringBuilder sb = new StringBuilder();
+		
 	/*	for (int i = 0; i < s.length(); i++) {
 			int ans = 0;
 			if (Character.isUpperCase(s.charAt(i))) {
