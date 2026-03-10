@@ -3,6 +3,7 @@ package codeiozoho;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+
 public class Isogram {
 	public static void main(String[] args) {
 		String s="Machine ";
